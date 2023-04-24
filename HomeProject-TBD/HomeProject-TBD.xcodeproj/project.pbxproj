@@ -23,6 +23,7 @@
 		CEBF242529F6ACE000716BD2 /* CountryPickerView in Frameworks */ = {isa = PBXBuildFile; productRef = CEBF242429F6ACE000716BD2 /* CountryPickerView */; };
 		CEBF242729F6D41B00716BD2 /* KeysUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF242629F6D41B00716BD2 /* KeysUserDefaults.swift */; };
 		CEBF242A29F6E4DF00716BD2 /* ChatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF242929F6E4DF00716BD2 /* ChatTableViewController.swift */; };
+		CEBF242D29F716D900716BD2 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF242C29F716D900716BD2 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		CEBF241F29F6A44500716BD2 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Regular.ttf"; path = "Font/Roboto/Roboto-Regular.ttf"; sourceTree = SOURCE_ROOT; };
 		CEBF242629F6D41B00716BD2 /* KeysUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeysUserDefaults.swift; sourceTree = "<group>"; };
 		CEBF242929F6E4DF00716BD2 /* ChatTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewController.swift; sourceTree = "<group>"; };
+		CEBF242C29F716D900716BD2 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E66785B30C697FEC16CCF3D5 /* Pods-HomeProject-TBD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeProject-TBD.release.xcconfig"; path = "Target Support Files/Pods-HomeProject-TBD/Pods-HomeProject-TBD.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,6 +105,7 @@
 				CEBF240C29F6784700716BD2 /* AuthModule */,
 				CEBF240F29F68BC000716BD2 /* RegistrationModule */,
 				CEBF242B29F6E4E300716BD2 /* ChatModule */,
+				CEBF242E29F716DC00716BD2 /* ProfileModule */,
 				CEBF240B29F677AE00716BD2 /* Resources */,
 				CEBF240429F66E1D00716BD2 /* Info.plist */,
 			);
@@ -187,6 +190,14 @@
 				CEBF242929F6E4DF00716BD2 /* ChatTableViewController.swift */,
 			);
 			path = ChatModule;
+			sourceTree = "<group>";
+		};
+		CEBF242E29F716DC00716BD2 /* ProfileModule */ = {
+			isa = PBXGroup;
+			children = (
+				CEBF242C29F716D900716BD2 /* ProfileViewController.swift */,
+			);
+			path = ProfileModule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,6 +330,7 @@
 				CEBF23F729F66E1C00716BD2 /* AppDelegate.swift in Sources */,
 				CEBF23F929F66E1C00716BD2 /* SceneDelegate.swift in Sources */,
 				CEBF241429F68CE300716BD2 /* Extension+UIColor.swift in Sources */,
+				CEBF242D29F716D900716BD2 /* ProfileViewController.swift in Sources */,
 				CEBF242729F6D41B00716BD2 /* KeysUserDefaults.swift in Sources */,
 				CEBF242A29F6E4DF00716BD2 /* ChatTableViewController.swift in Sources */,
 			);

@@ -46,7 +46,12 @@ final class AuthViewController: UIViewController {
     }()
     
     @objc func buttonPost () {
-        print("Post")
+        
+//         func
+        
+        let alert = UIAlertController(title: "СМС с кодом отправлено на ваш телефон", message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Хорошо", style: .cancel))
+        self.present(alert, animated: true, completion: nil)
     }
     
     private var textFieldSms: UITextField = {
@@ -77,7 +82,7 @@ final class AuthViewController: UIViewController {
         let vc = RegistrationViewController()
         vc.modalPresentationStyle = .fullScreen
         vc.modalTransitionStyle = .crossDissolve
-        self.present(vc, animated: true, completion: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     // MARK: - Lifecycle

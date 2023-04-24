@@ -27,19 +27,6 @@ final class RegistrationViewController: UIViewController {
         return view
     }()
     
-    private lazy var buttonBack : UIButton = {
-        let button = UIButton()
-        button.setImage(UIImage(systemName: "chevron.left"), for: UIControl.State.normal)
-        button.tintColor = .gray
-        button.layer.cornerRadius = 10
-        button.addTarget(self, action: #selector(buttonBackView), for: .touchUpInside)
-        return button
-    }()
-
-    @objc private func buttonBackView () {
-        self.dismiss(animated: true)
-    }
-    
     private var textFieldPhone: UITextField = {
         var view = UITextField()
         view.placeholder = "Введите номер телефона"
@@ -83,7 +70,7 @@ final class RegistrationViewController: UIViewController {
         let button = UIButton()
         button.layer.cornerRadius = 10
         button.backgroundColor = Constans.Color.colorButtonBlue
-        button.setTitle("Зарегестрироваться", for: .normal)
+        button.setTitle("Зарегистрироваться", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = Constans.Fonts.robotoRegular13
         button.addTarget(self, action: #selector(buttonNextView), for: .touchUpInside)
@@ -94,14 +81,14 @@ final class RegistrationViewController: UIViewController {
         let vc = ChatTableViewController()
         vc.modalPresentationStyle = .fullScreen
         vc.modalTransitionStyle = .crossDissolve
-        self.present(vc, animated: true, completion: nil)
+//        self.present(vc, animated: true, completion: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     // MARK: - Lifecycle
     override func loadView() {
         super.loadView()
         
-        view.addSubview(buttonBack)
         view.addSubview(imageView)
         view.addSubview(textView)
         view.addSubview(textFieldPhone)
@@ -110,12 +97,6 @@ final class RegistrationViewController: UIViewController {
         view.addSubview(buttonRegistration)
 
         let margins = view.safeAreaLayoutGuide
-        
-        buttonBack.translatesAutoresizingMaskIntoConstraints = false
-        buttonBack.widthAnchor.constraint(equalToConstant: 30).isActive = true
-        buttonBack.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        buttonBack.topAnchor.constraint(equalTo: margins.topAnchor, constant: 16).isActive = true
-        buttonBack.leftAnchor.constraint(equalTo: margins.leftAnchor, constant: 16).isActive = true
         
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.heightAnchor.constraint(equalToConstant: 100).isActive = true
@@ -158,6 +139,9 @@ final class RegistrationViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .white
+        
+        self.navigationController?.navigationBar.tintColor = UIColor.gray
+        self.navigationController?.navigationBar.topItem?.title = " "
     }
     
 }
