@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3337344056BE079E7A1DE25C /* Pods_HomeProject_TBD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A51F88732A50FCD9B5BD05A /* Pods_HomeProject_TBD.framework */; };
 		CEBF23F729F66E1C00716BD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF23F629F66E1C00716BD2 /* AppDelegate.swift */; };
 		CEBF23F929F66E1C00716BD2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF23F829F66E1C00716BD2 /* SceneDelegate.swift */; };
 		CEBF23FB29F66E1C00716BD2 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF23FA29F66E1C00716BD2 /* AuthViewController.swift */; };
@@ -16,12 +17,17 @@
 		CEBF240E29F68AE900716BD2 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF240D29F68AE900716BD2 /* RegistrationViewController.swift */; };
 		CEBF241129F68C7D00716BD2 /* Constans.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF241029F68C7D00716BD2 /* Constans.swift */; };
 		CEBF241429F68CE300716BD2 /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF241329F68CE300716BD2 /* Extension+UIColor.swift */; };
-		CEBF241729F69C7C00716BD2 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEBF241629F69C7C00716BD2 /* Roboto-Regular.ttf */; };
-		CEBF241929F69CB900716BD2 /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEBF241829F69CB900716BD2 /* Roboto-ThinItalic.ttf */; };
-		CEBF241B29F69CC700716BD2 /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEBF241A29F69CC700716BD2 /* Roboto-Italic.ttf */; };
+		CEBF242029F6A44500716BD2 /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEBF241D29F6A44500716BD2 /* Roboto-ThinItalic.ttf */; };
+		CEBF242129F6A44500716BD2 /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEBF241E29F6A44500716BD2 /* Roboto-Italic.ttf */; };
+		CEBF242229F6A44500716BD2 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEBF241F29F6A44500716BD2 /* Roboto-Regular.ttf */; };
+		CEBF242529F6ACE000716BD2 /* CountryPickerView in Frameworks */ = {isa = PBXBuildFile; productRef = CEBF242429F6ACE000716BD2 /* CountryPickerView */; };
+		CEBF242729F6D41B00716BD2 /* KeysUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF242629F6D41B00716BD2 /* KeysUserDefaults.swift */; };
+		CEBF242A29F6E4DF00716BD2 /* ChatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF242929F6E4DF00716BD2 /* ChatTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		321DBA84188783399DA93EA6 /* Pods-HomeProject-TBD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeProject-TBD.debug.xcconfig"; path = "Target Support Files/Pods-HomeProject-TBD/Pods-HomeProject-TBD.debug.xcconfig"; sourceTree = "<group>"; };
+		4A51F88732A50FCD9B5BD05A /* Pods_HomeProject_TBD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HomeProject_TBD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEBF23F329F66E1C00716BD2 /* HomeProject-TBD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HomeProject-TBD.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEBF23F629F66E1C00716BD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEBF23F829F66E1C00716BD2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -33,9 +39,12 @@
 		CEBF240D29F68AE900716BD2 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		CEBF241029F68C7D00716BD2 /* Constans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constans.swift; sourceTree = "<group>"; };
 		CEBF241329F68CE300716BD2 /* Extension+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
-		CEBF241629F69C7C00716BD2 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Regular.ttf"; path = "Font/Roboto/Roboto-Regular.ttf"; sourceTree = SOURCE_ROOT; };
-		CEBF241829F69CB900716BD2 /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-ThinItalic.ttf"; path = "Font/Roboto/Roboto-ThinItalic.ttf"; sourceTree = SOURCE_ROOT; };
-		CEBF241A29F69CC700716BD2 /* Roboto-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Italic.ttf"; path = "Font/Roboto/Roboto-Italic.ttf"; sourceTree = SOURCE_ROOT; };
+		CEBF241D29F6A44500716BD2 /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-ThinItalic.ttf"; path = "Font/Roboto/Roboto-ThinItalic.ttf"; sourceTree = SOURCE_ROOT; };
+		CEBF241E29F6A44500716BD2 /* Roboto-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Italic.ttf"; path = "Font/Roboto/Roboto-Italic.ttf"; sourceTree = SOURCE_ROOT; };
+		CEBF241F29F6A44500716BD2 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Regular.ttf"; path = "Font/Roboto/Roboto-Regular.ttf"; sourceTree = SOURCE_ROOT; };
+		CEBF242629F6D41B00716BD2 /* KeysUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeysUserDefaults.swift; sourceTree = "<group>"; };
+		CEBF242929F6E4DF00716BD2 /* ChatTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewController.swift; sourceTree = "<group>"; };
+		E66785B30C697FEC16CCF3D5 /* Pods-HomeProject-TBD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeProject-TBD.release.xcconfig"; path = "Target Support Files/Pods-HomeProject-TBD/Pods-HomeProject-TBD.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,17 +52,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEBF242529F6ACE000716BD2 /* CountryPickerView in Frameworks */,
+				3337344056BE079E7A1DE25C /* Pods_HomeProject_TBD.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3640FAA2E68984F58080F37F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4A51F88732A50FCD9B5BD05A /* Pods_HomeProject_TBD.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		975C4FB299154EB0C4818512 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				321DBA84188783399DA93EA6 /* Pods-HomeProject-TBD.debug.xcconfig */,
+				E66785B30C697FEC16CCF3D5 /* Pods-HomeProject-TBD.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		CEBF23EA29F66E1C00716BD2 = {
 			isa = PBXGroup;
 			children = (
 				CEBF23F529F66E1C00716BD2 /* HomeProject-TBD */,
 				CEBF23F429F66E1C00716BD2 /* Products */,
+				975C4FB299154EB0C4818512 /* Pods */,
+				3640FAA2E68984F58080F37F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -69,8 +99,10 @@
 			isa = PBXGroup;
 			children = (
 				CEBF240A29F6776900716BD2 /* Application */,
+				CEBF242829F6D41E00716BD2 /* UserDefaultsModule */,
 				CEBF240C29F6784700716BD2 /* AuthModule */,
 				CEBF240F29F68BC000716BD2 /* RegistrationModule */,
+				CEBF242B29F6E4E300716BD2 /* ChatModule */,
 				CEBF240B29F677AE00716BD2 /* Resources */,
 				CEBF240429F66E1D00716BD2 /* Info.plist */,
 			);
@@ -118,9 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				CEBF241029F68C7D00716BD2 /* Constans.swift */,
-				CEBF241629F69C7C00716BD2 /* Roboto-Regular.ttf */,
-				CEBF241829F69CB900716BD2 /* Roboto-ThinItalic.ttf */,
-				CEBF241A29F69CC700716BD2 /* Roboto-Italic.ttf */,
+				CEBF241C29F6A3F100716BD2 /* Font */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -133,6 +163,32 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		CEBF241C29F6A3F100716BD2 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				CEBF241E29F6A44500716BD2 /* Roboto-Italic.ttf */,
+				CEBF241F29F6A44500716BD2 /* Roboto-Regular.ttf */,
+				CEBF241D29F6A44500716BD2 /* Roboto-ThinItalic.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		CEBF242829F6D41E00716BD2 /* UserDefaultsModule */ = {
+			isa = PBXGroup;
+			children = (
+				CEBF242629F6D41B00716BD2 /* KeysUserDefaults.swift */,
+			);
+			path = UserDefaultsModule;
+			sourceTree = "<group>";
+		};
+		CEBF242B29F6E4E300716BD2 /* ChatModule */ = {
+			isa = PBXGroup;
+			children = (
+				CEBF242929F6E4DF00716BD2 /* ChatTableViewController.swift */,
+			);
+			path = ChatModule;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -140,15 +196,20 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CEBF240729F66E1D00716BD2 /* Build configuration list for PBXNativeTarget "HomeProject-TBD" */;
 			buildPhases = (
+				5E3EF27FB278E44B24BD7C3F /* [CP] Check Pods Manifest.lock */,
 				CEBF23EF29F66E1C00716BD2 /* Sources */,
 				CEBF23F029F66E1C00716BD2 /* Frameworks */,
 				CEBF23F129F66E1C00716BD2 /* Resources */,
+				D31A37DE1358DA62DFCC3298 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "HomeProject-TBD";
+			packageProductDependencies = (
+				CEBF242429F6ACE000716BD2 /* CountryPickerView */,
+			);
 			productName = "HomeProject-TBD";
 			productReference = CEBF23F329F66E1C00716BD2 /* HomeProject-TBD.app */;
 			productType = "com.apple.product-type.application";
@@ -169,7 +230,7 @@
 				};
 			};
 			buildConfigurationList = CEBF23EE29F66E1C00716BD2 /* Build configuration list for PBXProject "HomeProject-TBD" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -177,6 +238,9 @@
 				Base,
 			);
 			mainGroup = CEBF23EA29F66E1C00716BD2;
+			packageReferences = (
+				CEBF242329F6ACE000716BD2 /* XCRemoteSwiftPackageReference "CountryPickerView" */,
+			);
 			productRefGroup = CEBF23F429F66E1C00716BD2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -191,16 +255,58 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEBF241929F69CB900716BD2 /* Roboto-ThinItalic.ttf in Resources */,
-				CEBF241B29F69CC700716BD2 /* Roboto-Italic.ttf in Resources */,
+				CEBF242229F6A44500716BD2 /* Roboto-Regular.ttf in Resources */,
+				CEBF242029F6A44500716BD2 /* Roboto-ThinItalic.ttf in Resources */,
 				CEBF240329F66E1D00716BD2 /* LaunchScreen.storyboard in Resources */,
+				CEBF242129F6A44500716BD2 /* Roboto-Italic.ttf in Resources */,
 				CEBF240029F66E1D00716BD2 /* Assets.xcassets in Resources */,
-				CEBF241729F69C7C00716BD2 /* Roboto-Regular.ttf in Resources */,
 				CEBF23FE29F66E1C00716BD2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5E3EF27FB278E44B24BD7C3F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HomeProject-TBD-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D31A37DE1358DA62DFCC3298 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HomeProject-TBD/Pods-HomeProject-TBD-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HomeProject-TBD/Pods-HomeProject-TBD-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HomeProject-TBD/Pods-HomeProject-TBD-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CEBF23EF29F66E1C00716BD2 /* Sources */ = {
@@ -213,6 +319,8 @@
 				CEBF23F729F66E1C00716BD2 /* AppDelegate.swift in Sources */,
 				CEBF23F929F66E1C00716BD2 /* SceneDelegate.swift in Sources */,
 				CEBF241429F68CE300716BD2 /* Extension+UIColor.swift in Sources */,
+				CEBF242729F6D41B00716BD2 /* KeysUserDefaults.swift in Sources */,
+				CEBF242A29F6E4DF00716BD2 /* ChatTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +462,7 @@
 		};
 		CEBF240829F66E1D00716BD2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 321DBA84188783399DA93EA6 /* Pods-HomeProject-TBD.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -382,6 +491,7 @@
 		};
 		CEBF240929F66E1D00716BD2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E66785B30C697FEC16CCF3D5 /* Pods-HomeProject-TBD.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -430,6 +540,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CEBF242329F6ACE000716BD2 /* XCRemoteSwiftPackageReference "CountryPickerView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kizitonwose/CountryPickerView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CEBF242429F6ACE000716BD2 /* CountryPickerView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CEBF242329F6ACE000716BD2 /* XCRemoteSwiftPackageReference "CountryPickerView" */;
+			productName = CountryPickerView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CEBF23EB29F66E1C00716BD2 /* Project object */;
 }

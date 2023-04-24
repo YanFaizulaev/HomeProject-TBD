@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import PhoneNumberKit
+import CountryPickerView
+
 
 final class AuthViewController: UIViewController {
     
@@ -66,26 +69,21 @@ final class AuthViewController: UIViewController {
         button.setTitle("Войти", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = Constans.Fonts.robotoRegular13
-        button.addTarget(self, action: #selector(buttonBackView), for: .touchUpInside)
+        button.addTarget(self, action: #selector(buttonNextView), for: .touchUpInside)
         return button
     }()
     
-    @objc func buttonBackView () {
+    @objc func buttonNextView () {
         let vc = RegistrationViewController()
         vc.modalPresentationStyle = .fullScreen
         vc.modalTransitionStyle = .crossDissolve
         self.present(vc, animated: true, completion: nil)
     }
-
-    // MARK: - Lifecycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .white
-        layout()
-    }
     
-    // MARK: - Functions
-    func layout() {
+    // MARK: - Lifecycle
+    override func loadView() {
+        super.loadView()
+        
         view.addSubview(imageView)
         view.addSubview(textFieldPhone)
         view.addSubview(buttonSms)
@@ -124,13 +122,13 @@ final class AuthViewController: UIViewController {
         buttonRegistration.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: -25).isActive = true
         buttonRegistration.topAnchor.constraint(equalTo: textFieldSms.bottomAnchor, constant: 20).isActive = true
         
-        
-        buttonRegistration.translatesAutoresizingMaskIntoConstraints = false
-        buttonRegistration.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        buttonRegistration.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 25).isActive = true
-        buttonRegistration.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: -25).isActive = true
-        buttonRegistration.topAnchor.constraint(equalTo: textFieldSms.bottomAnchor, constant: 20).isActive = true
-    
     }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        view.backgroundColor = .white
+    }
+    
 }
 
