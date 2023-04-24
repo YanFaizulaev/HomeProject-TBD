@@ -9,21 +9,33 @@
 /* Begin PBXBuildFile section */
 		CEBF23F729F66E1C00716BD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF23F629F66E1C00716BD2 /* AppDelegate.swift */; };
 		CEBF23F929F66E1C00716BD2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF23F829F66E1C00716BD2 /* SceneDelegate.swift */; };
-		CEBF23FB29F66E1C00716BD2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF23FA29F66E1C00716BD2 /* ViewController.swift */; };
+		CEBF23FB29F66E1C00716BD2 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF23FA29F66E1C00716BD2 /* AuthViewController.swift */; };
 		CEBF23FE29F66E1C00716BD2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEBF23FC29F66E1C00716BD2 /* Main.storyboard */; };
 		CEBF240029F66E1D00716BD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEBF23FF29F66E1D00716BD2 /* Assets.xcassets */; };
 		CEBF240329F66E1D00716BD2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEBF240129F66E1D00716BD2 /* LaunchScreen.storyboard */; };
+		CEBF240E29F68AE900716BD2 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF240D29F68AE900716BD2 /* RegistrationViewController.swift */; };
+		CEBF241129F68C7D00716BD2 /* Constans.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF241029F68C7D00716BD2 /* Constans.swift */; };
+		CEBF241429F68CE300716BD2 /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF241329F68CE300716BD2 /* Extension+UIColor.swift */; };
+		CEBF241729F69C7C00716BD2 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEBF241629F69C7C00716BD2 /* Roboto-Regular.ttf */; };
+		CEBF241929F69CB900716BD2 /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEBF241829F69CB900716BD2 /* Roboto-ThinItalic.ttf */; };
+		CEBF241B29F69CC700716BD2 /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEBF241A29F69CC700716BD2 /* Roboto-Italic.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CEBF23F329F66E1C00716BD2 /* HomeProject-TBD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HomeProject-TBD.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEBF23F629F66E1C00716BD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEBF23F829F66E1C00716BD2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CEBF23FA29F66E1C00716BD2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CEBF23FA29F66E1C00716BD2 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		CEBF23FD29F66E1C00716BD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CEBF23FF29F66E1D00716BD2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEBF240229F66E1D00716BD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEBF240429F66E1D00716BD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEBF240D29F68AE900716BD2 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		CEBF241029F68C7D00716BD2 /* Constans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constans.swift; sourceTree = "<group>"; };
+		CEBF241329F68CE300716BD2 /* Extension+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
+		CEBF241629F69C7C00716BD2 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Regular.ttf"; path = "Font/Roboto/Roboto-Regular.ttf"; sourceTree = SOURCE_ROOT; };
+		CEBF241829F69CB900716BD2 /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-ThinItalic.ttf"; path = "Font/Roboto/Roboto-ThinItalic.ttf"; sourceTree = SOURCE_ROOT; };
+		CEBF241A29F69CC700716BD2 /* Roboto-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Italic.ttf"; path = "Font/Roboto/Roboto-Italic.ttf"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +68,69 @@
 		CEBF23F529F66E1C00716BD2 /* HomeProject-TBD */ = {
 			isa = PBXGroup;
 			children = (
-				CEBF23F629F66E1C00716BD2 /* AppDelegate.swift */,
-				CEBF23F829F66E1C00716BD2 /* SceneDelegate.swift */,
-				CEBF23FA29F66E1C00716BD2 /* ViewController.swift */,
-				CEBF23FC29F66E1C00716BD2 /* Main.storyboard */,
-				CEBF23FF29F66E1D00716BD2 /* Assets.xcassets */,
-				CEBF240129F66E1D00716BD2 /* LaunchScreen.storyboard */,
+				CEBF240A29F6776900716BD2 /* Application */,
+				CEBF240C29F6784700716BD2 /* AuthModule */,
+				CEBF240F29F68BC000716BD2 /* RegistrationModule */,
+				CEBF240B29F677AE00716BD2 /* Resources */,
 				CEBF240429F66E1D00716BD2 /* Info.plist */,
 			);
 			path = "HomeProject-TBD";
+			sourceTree = "<group>";
+		};
+		CEBF240A29F6776900716BD2 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				CEBF23F629F66E1C00716BD2 /* AppDelegate.swift */,
+				CEBF23F829F66E1C00716BD2 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		CEBF240B29F677AE00716BD2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CEBF241229F68C8600716BD2 /* Helpers */,
+				CEBF241529F68CE500716BD2 /* Extension */,
+				CEBF23FC29F66E1C00716BD2 /* Main.storyboard */,
+				CEBF23FF29F66E1D00716BD2 /* Assets.xcassets */,
+				CEBF240129F66E1D00716BD2 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CEBF240C29F6784700716BD2 /* AuthModule */ = {
+			isa = PBXGroup;
+			children = (
+				CEBF23FA29F66E1C00716BD2 /* AuthViewController.swift */,
+			);
+			path = AuthModule;
+			sourceTree = "<group>";
+		};
+		CEBF240F29F68BC000716BD2 /* RegistrationModule */ = {
+			isa = PBXGroup;
+			children = (
+				CEBF240D29F68AE900716BD2 /* RegistrationViewController.swift */,
+			);
+			path = RegistrationModule;
+			sourceTree = "<group>";
+		};
+		CEBF241229F68C8600716BD2 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CEBF241029F68C7D00716BD2 /* Constans.swift */,
+				CEBF241629F69C7C00716BD2 /* Roboto-Regular.ttf */,
+				CEBF241829F69CB900716BD2 /* Roboto-ThinItalic.ttf */,
+				CEBF241A29F69CC700716BD2 /* Roboto-Italic.ttf */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		CEBF241529F68CE500716BD2 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				CEBF241329F68CE300716BD2 /* Extension+UIColor.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,8 +191,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEBF241929F69CB900716BD2 /* Roboto-ThinItalic.ttf in Resources */,
+				CEBF241B29F69CC700716BD2 /* Roboto-Italic.ttf in Resources */,
 				CEBF240329F66E1D00716BD2 /* LaunchScreen.storyboard in Resources */,
 				CEBF240029F66E1D00716BD2 /* Assets.xcassets in Resources */,
+				CEBF241729F69C7C00716BD2 /* Roboto-Regular.ttf in Resources */,
 				CEBF23FE29F66E1C00716BD2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,9 +207,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEBF23FB29F66E1C00716BD2 /* ViewController.swift in Sources */,
+				CEBF240E29F68AE900716BD2 /* RegistrationViewController.swift in Sources */,
+				CEBF23FB29F66E1C00716BD2 /* AuthViewController.swift in Sources */,
+				CEBF241129F68C7D00716BD2 /* Constans.swift in Sources */,
 				CEBF23F729F66E1C00716BD2 /* AppDelegate.swift in Sources */,
 				CEBF23F929F66E1C00716BD2 /* SceneDelegate.swift in Sources */,
+				CEBF241429F68CE300716BD2 /* Extension+UIColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,8 +365,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -321,8 +393,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
