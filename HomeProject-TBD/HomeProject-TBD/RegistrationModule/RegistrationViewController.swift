@@ -81,7 +81,6 @@ final class RegistrationViewController: UIViewController {
         let vc = ChatTableViewController()
         vc.modalPresentationStyle = .fullScreen
         vc.modalTransitionStyle = .crossDissolve
-//        self.present(vc, animated: true, completion: nil)
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

@@ -24,6 +24,10 @@
 		CEBF242729F6D41B00716BD2 /* KeysUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF242629F6D41B00716BD2 /* KeysUserDefaults.swift */; };
 		CEBF242A29F6E4DF00716BD2 /* ChatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF242929F6E4DF00716BD2 /* ChatTableViewController.swift */; };
 		CEBF242D29F716D900716BD2 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF242C29F716D900716BD2 /* ProfileViewController.swift */; };
+		CEBF243029F79CB700716BD2 /* ChatTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF242F29F79CB700716BD2 /* ChatTableViewModel.swift */; };
+		CEBF243229F7A02700716BD2 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF243129F7A02700716BD2 /* ChatTableViewCell.swift */; };
+		CEBF243429F7A4E300716BD2 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF243329F7A4E300716BD2 /* ChatViewController.swift */; };
+		CEBF243929F7BA5900716BD2 /* Extension+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF243829F7BA5900716BD2 /* Extension+UIImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +50,10 @@
 		CEBF242629F6D41B00716BD2 /* KeysUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeysUserDefaults.swift; sourceTree = "<group>"; };
 		CEBF242929F6E4DF00716BD2 /* ChatTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewController.swift; sourceTree = "<group>"; };
 		CEBF242C29F716D900716BD2 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		CEBF242F29F79CB700716BD2 /* ChatTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewModel.swift; sourceTree = "<group>"; };
+		CEBF243129F7A02700716BD2 /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
+		CEBF243329F7A4E300716BD2 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		CEBF243829F7BA5900716BD2 /* Extension+UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIImage.swift"; sourceTree = "<group>"; };
 		E66785B30C697FEC16CCF3D5 /* Pods-HomeProject-TBD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeProject-TBD.release.xcconfig"; path = "Target Support Files/Pods-HomeProject-TBD/Pods-HomeProject-TBD.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -162,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				CEBF241329F68CE300716BD2 /* Extension+UIColor.swift */,
+				CEBF243829F7BA5900716BD2 /* Extension+UIImage.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -187,7 +196,8 @@
 		CEBF242B29F6E4E300716BD2 /* ChatModule */ = {
 			isa = PBXGroup;
 			children = (
-				CEBF242929F6E4DF00716BD2 /* ChatTableViewController.swift */,
+				CEBF243529F7A4EB00716BD2 /* TableView */,
+				CEBF243629F7A4F700716BD2 /* ViewController */,
 			);
 			path = ChatModule;
 			sourceTree = "<group>";
@@ -198,6 +208,24 @@
 				CEBF242C29F716D900716BD2 /* ProfileViewController.swift */,
 			);
 			path = ProfileModule;
+			sourceTree = "<group>";
+		};
+		CEBF243529F7A4EB00716BD2 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				CEBF242929F6E4DF00716BD2 /* ChatTableViewController.swift */,
+				CEBF242F29F79CB700716BD2 /* ChatTableViewModel.swift */,
+				CEBF243129F7A02700716BD2 /* ChatTableViewCell.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		CEBF243629F7A4F700716BD2 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CEBF243329F7A4E300716BD2 /* ChatViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -324,15 +352,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEBF243929F7BA5900716BD2 /* Extension+UIImage.swift in Sources */,
 				CEBF240E29F68AE900716BD2 /* RegistrationViewController.swift in Sources */,
 				CEBF23FB29F66E1C00716BD2 /* AuthViewController.swift in Sources */,
 				CEBF241129F68C7D00716BD2 /* Constans.swift in Sources */,
 				CEBF23F729F66E1C00716BD2 /* AppDelegate.swift in Sources */,
 				CEBF23F929F66E1C00716BD2 /* SceneDelegate.swift in Sources */,
+				CEBF243229F7A02700716BD2 /* ChatTableViewCell.swift in Sources */,
 				CEBF241429F68CE300716BD2 /* Extension+UIColor.swift in Sources */,
 				CEBF242D29F716D900716BD2 /* ProfileViewController.swift in Sources */,
 				CEBF242729F6D41B00716BD2 /* KeysUserDefaults.swift in Sources */,
 				CEBF242A29F6E4DF00716BD2 /* ChatTableViewController.swift in Sources */,
+				CEBF243429F7A4E300716BD2 /* ChatViewController.swift in Sources */,
+				CEBF243029F79CB700716BD2 /* ChatTableViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
