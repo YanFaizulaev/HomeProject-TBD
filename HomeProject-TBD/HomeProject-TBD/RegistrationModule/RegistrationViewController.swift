@@ -23,14 +23,14 @@ final class RegistrationViewController: UIViewController {
         view.text = "Регистрация в ЗГТ"
         view.textAlignment = .center
         view.textColor = Constans.Color.colorButtonBlue
-        view.font = Constans.Fonts.robotoRegular13
+        view.font = Constans.Fonts.robotoRegular15
         return view
     }()
     
     private var textFieldPhone: UITextField = {
         var view = UITextField()
         view.placeholder = "Введите номер телефона"
-        view.font = Constans.Fonts.robotoRegular13
+        view.font = Constans.Fonts.robotoRegular15
         view.borderStyle = UITextField.BorderStyle.roundedRect
         view.autocorrectionType = UITextAutocorrectionType.no
         view.keyboardType = UIKeyboardType.default
@@ -43,7 +43,7 @@ final class RegistrationViewController: UIViewController {
     private var textFieldName: UITextField = {
         var view = UITextField()
         view.placeholder = "Введите Имя"
-        view.font = Constans.Fonts.robotoRegular13
+        view.font = Constans.Fonts.robotoRegular15
         view.borderStyle = UITextField.BorderStyle.roundedRect
         view.autocorrectionType = UITextAutocorrectionType.no
         view.keyboardType = UIKeyboardType.default
@@ -56,7 +56,7 @@ final class RegistrationViewController: UIViewController {
     private var textFieldNickName: UITextField = {
         var view = UITextField()
         view.placeholder = "Введите Ник"
-        view.font = Constans.Fonts.robotoRegular13
+        view.font = Constans.Fonts.robotoRegular15
         view.borderStyle = UITextField.BorderStyle.roundedRect
         view.autocorrectionType = UITextAutocorrectionType.no
         view.keyboardType = UIKeyboardType.default
@@ -72,7 +72,7 @@ final class RegistrationViewController: UIViewController {
         button.backgroundColor = Constans.Color.colorButtonBlue
         button.setTitle("Зарегистрироваться", for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = Constans.Fonts.robotoRegular13
+        button.titleLabel?.font = Constans.Fonts.robotoRegular15
         button.addTarget(self, action: #selector(buttonNextView), for: .touchUpInside)
         return button
     }()

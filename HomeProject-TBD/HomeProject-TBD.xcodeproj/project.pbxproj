@@ -28,6 +28,7 @@
 		CEBF243229F7A02700716BD2 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF243129F7A02700716BD2 /* ChatTableViewCell.swift */; };
 		CEBF243429F7A4E300716BD2 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF243329F7A4E300716BD2 /* ChatViewController.swift */; };
 		CEBF243929F7BA5900716BD2 /* Extension+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF243829F7BA5900716BD2 /* Extension+UIImage.swift */; };
+		CEBF243B29F7CAF000716BD2 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF243A29F7CAF000716BD2 /* EditProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		CEBF243129F7A02700716BD2 /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
 		CEBF243329F7A4E300716BD2 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		CEBF243829F7BA5900716BD2 /* Extension+UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIImage.swift"; sourceTree = "<group>"; };
+		CEBF243A29F7CAF000716BD2 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		E66785B30C697FEC16CCF3D5 /* Pods-HomeProject-TBD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeProject-TBD.release.xcconfig"; path = "Target Support Files/Pods-HomeProject-TBD/Pods-HomeProject-TBD.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -206,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				CEBF242C29F716D900716BD2 /* ProfileViewController.swift */,
+				CEBF243A29F7CAF000716BD2 /* EditProfileViewController.swift */,
 			);
 			path = ProfileModule;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 				CEBF241129F68C7D00716BD2 /* Constans.swift in Sources */,
 				CEBF23F729F66E1C00716BD2 /* AppDelegate.swift in Sources */,
 				CEBF23F929F66E1C00716BD2 /* SceneDelegate.swift in Sources */,
+				CEBF243B29F7CAF000716BD2 /* EditProfileViewController.swift in Sources */,
 				CEBF243229F7A02700716BD2 /* ChatTableViewCell.swift in Sources */,
 				CEBF241429F68CE300716BD2 /* Extension+UIColor.swift in Sources */,
 				CEBF242D29F716D900716BD2 /* ProfileViewController.swift in Sources */,

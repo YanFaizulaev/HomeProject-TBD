@@ -10,14 +10,17 @@ import UIKit
 enum Constans {
 
     enum Fonts {
-        static var robotoRegular13: UIFont? {
+        static var robotoRegular15: UIFont? {
             UIFont(name: "Roboto-Regular", size: 15)
         }
-        static var robotoThinItalic13: UIFont? {
+        static var robotoThinItalic15: UIFont? {
             UIFont(name: "Roboto-ThinItalic", size: 15)
         }
-        static var robotoItalic13: UIFont? {
+        static var robotoItalic15: UIFont? {
             UIFont(name: "Roboto-Italic", size: 15)
+        }
+        static var robotoItalic12: UIFont? {
+            UIFont(name: "Roboto-Italic", size: 12)
         }
     }
 

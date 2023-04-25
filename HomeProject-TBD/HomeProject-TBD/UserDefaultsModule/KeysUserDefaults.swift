@@ -10,10 +10,12 @@ import UIKit
 enum KeysUserDefaults {
     static let userIsLogged = "userIsLogged"
     static let newUser = "newUser"
+    
     static let refreshTokenUser = "refreshTokenUser"
     static let accessTokenUser = "accessTokenUser"
     static let nameUser = "nameUser"
     static let nickNameUser = "tokenUser"
+    
 }
 
 extension UserDefaults {
