@@ -7,7 +7,9 @@
 
 import UIKit
 
-final class RegistrationViewController: UIViewController {
+final class RegistrationViewController: UIViewController, UITextFieldDelegate {
+    
+    var phone: String?
     
     // MARK: - View
     private var imageView: UIImageView = {
@@ -29,7 +31,7 @@ final class RegistrationViewController: UIViewController {
     
     private var textFieldPhone: UITextField = {
         var view = UITextField()
-        view.placeholder = "Введите номер телефона"
+//        view.placeholder = "Введите номер телефона"
         view.font = Constans.Fonts.robotoRegular15
         view.borderStyle = UITextField.BorderStyle.roundedRect
         view.autocorrectionType = UITextAutocorrectionType.no
@@ -138,9 +140,17 @@ final class RegistrationViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .white
+        textFieldPhone.text = self.phone
+        self.textFieldPhone.delegate = self
         
         self.navigationController?.navigationBar.tintColor = UIColor.gray
         self.navigationController?.navigationBar.topItem?.title = " "
+    }
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+       if textField == textFieldPhone {
+       }
+       return false
     }
     
 }

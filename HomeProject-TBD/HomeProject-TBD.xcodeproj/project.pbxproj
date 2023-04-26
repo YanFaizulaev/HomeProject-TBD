@@ -10,6 +10,10 @@
 		3337344056BE079E7A1DE25C /* Pods_HomeProject_TBD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A51F88732A50FCD9B5BD05A /* Pods_HomeProject_TBD.framework */; };
 		CE27D7C429F824E000BD8049 /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = CE27D7C329F824E000BD8049 /* MessageKit */; };
 		CE43877C29F9025800DD7CF0 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43877B29F9025800DD7CF0 /* ChatViewModel.swift */; };
+		CE43877E29F95EEC00DD7CF0 /* NetworkServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43877D29F95EEC00DD7CF0 /* NetworkServices.swift */; };
+		CE43878329F9687A00DD7CF0 /* APIAuthNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43878229F9687A00DD7CF0 /* APIAuthNetwork.swift */; };
+		CE43878529F9794500DD7CF0 /* APIRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43878429F9794500DD7CF0 /* APIRegistration.swift */; };
+		CE43878729F97D3500DD7CF0 /* APIProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43878629F97D3500DD7CF0 /* APIProfile.swift */; };
 		CEBF23F729F66E1C00716BD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF23F629F66E1C00716BD2 /* AppDelegate.swift */; };
 		CEBF23F929F66E1C00716BD2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF23F829F66E1C00716BD2 /* SceneDelegate.swift */; };
 		CEBF23FB29F66E1C00716BD2 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF23FA29F66E1C00716BD2 /* AuthViewController.swift */; };
@@ -37,6 +41,10 @@
 		321DBA84188783399DA93EA6 /* Pods-HomeProject-TBD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeProject-TBD.debug.xcconfig"; path = "Target Support Files/Pods-HomeProject-TBD/Pods-HomeProject-TBD.debug.xcconfig"; sourceTree = "<group>"; };
 		4A51F88732A50FCD9B5BD05A /* Pods_HomeProject_TBD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HomeProject_TBD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE43877B29F9025800DD7CF0 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		CE43877D29F95EEC00DD7CF0 /* NetworkServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServices.swift; sourceTree = "<group>"; };
+		CE43878229F9687A00DD7CF0 /* APIAuthNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIAuthNetwork.swift; sourceTree = "<group>"; };
+		CE43878429F9794500DD7CF0 /* APIRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRegistration.swift; sourceTree = "<group>"; };
+		CE43878629F97D3500DD7CF0 /* APIProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProfile.swift; sourceTree = "<group>"; };
 		CEBF23F329F66E1C00716BD2 /* HomeProject-TBD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HomeProject-TBD.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEBF23F629F66E1C00716BD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEBF23F829F66E1C00716BD2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +101,17 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		CE43877F29F9613C00DD7CF0 /* NetworkModule */ = {
+			isa = PBXGroup;
+			children = (
+				CE43877D29F95EEC00DD7CF0 /* NetworkServices.swift */,
+				CE43878229F9687A00DD7CF0 /* APIAuthNetwork.swift */,
+				CE43878429F9794500DD7CF0 /* APIRegistration.swift */,
+				CE43878629F97D3500DD7CF0 /* APIProfile.swift */,
+			);
+			path = NetworkModule;
+			sourceTree = "<group>";
+		};
 		CEBF23EA29F66E1C00716BD2 = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +139,7 @@
 				CEBF240F29F68BC000716BD2 /* RegistrationModule */,
 				CEBF242B29F6E4E300716BD2 /* ChatModule */,
 				CEBF242E29F716DC00716BD2 /* ProfileModule */,
+				CE43877F29F9613C00DD7CF0 /* NetworkModule */,
 				CEBF240B29F677AE00716BD2 /* Resources */,
 				CEBF240429F66E1D00716BD2 /* Info.plist */,
 			);
@@ -365,14 +385,18 @@
 				CEBF243929F7BA5900716BD2 /* Extension+UIImage.swift in Sources */,
 				CEBF240E29F68AE900716BD2 /* RegistrationViewController.swift in Sources */,
 				CEBF23FB29F66E1C00716BD2 /* AuthViewController.swift in Sources */,
+				CE43877E29F95EEC00DD7CF0 /* NetworkServices.swift in Sources */,
 				CEBF241129F68C7D00716BD2 /* Constans.swift in Sources */,
 				CEBF23F729F66E1C00716BD2 /* AppDelegate.swift in Sources */,
+				CE43878329F9687A00DD7CF0 /* APIAuthNetwork.swift in Sources */,
 				CEBF23F929F66E1C00716BD2 /* SceneDelegate.swift in Sources */,
+				CE43878729F97D3500DD7CF0 /* APIProfile.swift in Sources */,
 				CEBF243B29F7CAF000716BD2 /* EditProfileViewController.swift in Sources */,
 				CEBF243229F7A02700716BD2 /* ChatTableViewCell.swift in Sources */,
 				CEBF241429F68CE300716BD2 /* Extension+UIColor.swift in Sources */,
 				CEBF242D29F716D900716BD2 /* ProfileViewController.swift in Sources */,
 				CEBF242729F6D41B00716BD2 /* KeysUserDefaults.swift in Sources */,
+				CE43878529F9794500DD7CF0 /* APIRegistration.swift in Sources */,
 				CEBF242A29F6E4DF00716BD2 /* ChatTableViewController.swift in Sources */,
 				CEBF243429F7A4E300716BD2 /* ChatViewController.swift in Sources */,
 				CE43877C29F9025800DD7CF0 /* ChatViewModel.swift in Sources */,

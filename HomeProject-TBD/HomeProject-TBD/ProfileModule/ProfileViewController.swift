@@ -9,10 +9,12 @@ import UIKit
 
 final class ProfileViewController: UIViewController {
     
+//    private let serviceAPI = NetworkServices()
+    
     // MARK: - View
     private var imageViewUser: UIImageView = {
         var view = UIImageView()
-//         поменять
+        //         поменять
         view.image = Constans.Image.imageLogo
         view.contentMode = .scaleAspectFit
         return view
@@ -117,10 +119,10 @@ final class ProfileViewController: UIViewController {
     private lazy var labelStack: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [labelNumberPhone, labelNameChat, labelName, labelNickName, labelCity, labelDateOfBirth, labelZodiacSign, labelAboutMe])
         
-//        stackView.axis = .vertical
-//        stackView.alignment = .leading
-//        stackView.distribution = .fill
-//        stackView.spacing = 8
+        //        stackView.axis = .vertical
+        //        stackView.alignment = .leading
+        //        stackView.distribution = .fill
+        //        stackView.spacing = 8
         
         stackView.axis = .vertical
         stackView.spacing = UIStackView.spacingUseSystem
@@ -134,7 +136,7 @@ final class ProfileViewController: UIViewController {
         
         view.addSubview(imageViewUser)
         view.addSubview(labelStack)
-
+        
         let margins = view.safeAreaLayoutGuide
         
         imageViewUser.translatesAutoresizingMaskIntoConstraints = false
@@ -148,7 +150,6 @@ final class ProfileViewController: UIViewController {
         labelStack.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 10).isActive = true
         labelStack.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: -10).isActive = true
         labelStack.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: 0).isActive = true
-        
     }
     
     override func viewDidLoad() {
@@ -156,21 +157,37 @@ final class ProfileViewController: UIViewController {
         
         view.backgroundColor = .white
         title = "Profile"
-        navigationItem.largeTitleDisplayMode = .never
-    
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit,
-                                                            target: self,
-                                                            action: #selector(rightBarButton))
+        
+        setnavigationItem()
     }
     
-    @objc func rightBarButton() {
+    private func setnavigationItem () {
+        navigationItem.largeTitleDisplayMode = .never
+        
+        let editImage    = UIImage(systemName: "pencil.circle")
+        let updateImage  = UIImage(systemName: "arrow.counterclockwise.icloud")
+        
+        let editButton   = UIBarButtonItem(image: editImage,  style: .plain, target: self, action: #selector(didTapEditButton(sender:)))
+        let updateButton = UIBarButtonItem(image: updateImage,  style: .plain, target: self, action: #selector(didTapUpdateButton(sender:)))
+        
+        navigationItem.rightBarButtonItems = [editButton, updateButton]
+    }
+    
+    @objc func didTapEditButton(sender: AnyObject){
         let vc = EditProfileViewController()
         vc.modalPresentationStyle = .fullScreen
         vc.modalTransitionStyle = .crossDissolve
         self.navigationController?.pushViewController(vc, animated: false)
     }
-
+    
+    @objc func didTapUpdateButton(sender: AnyObject){
+//        serviceAPI.fetchData(urlString: "") { result in
+//            switch result {
+//            case .success(let response):
+//                print(response)
+//            case .failure(let error):
+//                print("Error loading recommended podcasts: \(error.localizedDescription)")
+//            }
+//        }
+    }
 }
-
-
-

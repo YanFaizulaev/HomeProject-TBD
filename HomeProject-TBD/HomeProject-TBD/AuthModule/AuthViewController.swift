@@ -12,6 +12,8 @@ import CountryPickerView
 
 final class AuthViewController: UIViewController {
     
+    private let serviceAPI = APIAuthNetwork()
+    
     // MARK: - View
     private var imageView: UIImageView = {
         var view = UIImageView()
@@ -47,9 +49,9 @@ final class AuthViewController: UIViewController {
     
     @objc func buttonPost () {
         
-//         func
+        setAuthUser()
         
-        let alert = UIAlertController(title: "СМС с кодом отправлено на ваш телефон", message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: "СМС с кодом отправлен на ваш телефон.", message: nil, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Хорошо", style: .cancel))
         self.present(alert, animated: true, completion: nil)
     }
@@ -79,10 +81,20 @@ final class AuthViewController: UIViewController {
     }()
     
     @objc func buttonNextView () {
-        let vc = RegistrationViewController()
-        vc.modalPresentationStyle = .fullScreen
-        vc.modalTransitionStyle = .crossDissolve
-        self.navigationController?.pushViewController(vc, animated: true)
+        
+        setAuthCheckUser()
+        
+        if textFieldSms.text == "133337" {
+            let vc = RegistrationViewController()
+            vc.modalPresentationStyle = .fullScreen
+            vc.modalTransitionStyle = .crossDissolve
+            vc.phone = textFieldNumberPhone.text
+            self.navigationController?.pushViewController(vc, animated: true)
+        } else {
+            let alert = UIAlertController(title: "Код для подтверждения неверный.", message: nil, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Повторить ввод", style: .cancel))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     // MARK: - Lifecycle
@@ -131,9 +143,34 @@ final class AuthViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         view.backgroundColor = .white
     }
     
+    // MARK: - Functions
+    private func setAuthUser () {
+        serviceAPI.fetchAuthUserPhone(phone: textFieldNumberPhone.text ?? "") { result in
+            switch result {
+            case .success(let response):
+                if response.is_success == true {
+                    print("Пользователь зарегистрирован")
+                }
+            case .failure(let error):
+                print("Error loading recommended podcasts: \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    private func setAuthCheckUser () {
+        serviceAPI.fetchAuthCheckUser(phone: textFieldNumberPhone.text ?? "", code: textFieldSms.text ?? "") { result in
+            switch result {
+            case .success(let response):
+                UserDefaults.standard.set(response.access_token, forKey: KeysUserDefaults.accessTokenUser)
+                UserDefaults.standard.set(response.refresh_token, forKey: KeysUserDefaults.refreshTokenUser)
+                print("Пользователь проходит регистрацию")
+            case .failure(let error):
+                print("Error loading recommended podcasts: \(error.localizedDescription)")
+            }
+        }
+    }
 }
 

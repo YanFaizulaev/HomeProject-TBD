@@ -9,10 +9,11 @@ import UIKit
 
 enum KeysUserDefaults {
     static let userIsLogged = "userIsLogged"
-    static let newUser = "newUser"
+    static let userHasRegistered = "userHasRegistered"
     
     static let refreshTokenUser = "refreshTokenUser"
     static let accessTokenUser = "accessTokenUser"
+    static let userID = "userID"
     static let nameUser = "nameUser"
     static let nickNameUser = "tokenUser"
     
@@ -23,13 +24,16 @@ extension UserDefaults {
         return bool(forKey: KeysUserDefaults.userIsLogged)
     }
     @objc dynamic var newUser: Bool {
-        return bool(forKey: KeysUserDefaults.newUser)
+        return bool(forKey: KeysUserDefaults.userHasRegistered)
     }
     @objc dynamic var refreshTokenUser: String {
         return string(forKey: KeysUserDefaults.refreshTokenUser) ?? ""
     }
     @objc dynamic var accessTokenUser: String {
         return string(forKey: KeysUserDefaults.accessTokenUser) ?? ""
+    }
+    @objc dynamic var userID: Int {
+        return integer(forKey: KeysUserDefaults.userID)
     }
     @objc dynamic var nameUser: String {
         return string(forKey: KeysUserDefaults.nameUser) ?? ""
