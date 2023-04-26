@@ -308,12 +308,16 @@ public final class PhoneNumberKit: NSObject {
         }
 #endif
         let currentLocale = Locale.current
-        if #available(iOS 10.0, *), let countryCode = currentLocale.language.region?.identifier {
-            return countryCode.uppercased()
-        } else {
-            if let countryCode = (currentLocale as NSLocale).object(forKey: .countryCode) as? String {
+        if #available(iOS 16, *) {
+            if #available(iOS 10.0, *), let countryCode = currentLocale.language.region?.identifier {
                 return countryCode.uppercased()
+            } else {
+                if let countryCode = (currentLocale as NSLocale).object(forKey: .countryCode) as? String {
+                    return countryCode.uppercased()
+                }
             }
+        } else {
+            // Fallback on earlier versions
         }
         return PhoneNumberConstants.defaultCountry
     }

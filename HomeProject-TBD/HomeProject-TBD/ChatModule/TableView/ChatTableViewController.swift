@@ -11,10 +11,10 @@ final class ChatTableViewController: UIViewController {
     
     // MARK: - Model
     private let table: [ChatTableViewModel] = [
-        ChatTableViewModel(labelImage: UIImage(named: "3690476")!, labelNameChat: "Рабочий", labelNameUser: "Nikita", labelText: "Завтра собрание!!! В 12:00, не опаздывать!"),
-        ChatTableViewModel(labelImage: UIImage(named: "3690476")!, labelNameChat: "Корпоративный", labelNameUser: "Sveta", labelText: "Не забудьте план теплицы."),
-        ChatTableViewModel(labelImage: UIImage(named: "3690476")!, labelNameChat: "Партнеры", labelNameUser: "Maxim", labelText: "Собрание акционеров переносится на 2 недели с сохранением времени встречи. Спасибо за понимание."),
-        ChatTableViewModel(labelImage: UIImage(named: "3690476")!, labelNameChat: "Общий", labelNameUser: "Nikita", labelText: "Я завтра не приду на собрание.")
+        ChatTableViewModel(labelImage: UIImage(named: "3690476")!, labelNameChat: "Рабочий", labelNameUser: "Nikita", labelText: "Завтра собрание!!! В 12:00, не опаздывать!", labelMessage: 25, labelTime: "19:10"),
+        ChatTableViewModel(labelImage: UIImage(named: "3690476")!, labelNameChat: "Корпоративный", labelNameUser: "Sveta", labelText: "Не забудьте план теплицы.", labelMessage: 65, labelTime: "14:45"),
+        ChatTableViewModel(labelImage: UIImage(named: "3690476")!, labelNameChat: "Партнеры", labelNameUser: "Maxim", labelText: "Собрание акционеров переносится на 2 недели с сохранением времени встречи. Спасибо за понимание.", labelMessage: 78, labelTime: "11:18"),
+        ChatTableViewModel(labelImage: UIImage(named: "3690476")!, labelNameChat: "Общий", labelNameUser: "Pavel", labelText: "Я завтра не приду на собрание.", labelMessage: 7, labelTime: "09:15")
             ]
     
     // MARK: - View

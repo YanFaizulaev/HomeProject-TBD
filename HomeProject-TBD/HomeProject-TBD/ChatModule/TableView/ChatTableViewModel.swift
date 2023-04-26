@@ -12,4 +12,6 @@ struct ChatTableViewModel {
     let labelNameChat: String
     let labelNameUser: String
     let labelText: String
+    let labelMessage: Int
+    let labelTime: String
 }

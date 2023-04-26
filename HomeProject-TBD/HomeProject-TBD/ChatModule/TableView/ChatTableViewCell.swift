@@ -56,7 +56,6 @@ final class ChatTableViewCell: UITableViewCell {
         label.numberOfLines = 1
         label.textAlignment = .center
         label.textColor = .gray
-        label.text = "15:40"
         return label
     }()
     
@@ -70,7 +69,6 @@ final class ChatTableViewCell: UITableViewCell {
         label.font = Constans.Fonts.robotoItalic12
         label.textColor = .white
         label.backgroundColor = .red
-        label.text = "85"
         return label
     }()
 
@@ -95,6 +93,8 @@ final class ChatTableViewCell: UITableViewCell {
         labelNameChat.text = file.labelNameChat
         labelNameUser.text = file.labelNameUser
         labelText.text = file.labelText
+        labelMessage.text = "\(file.labelMessage)"
+        labelTime.text = file.labelTime
     }
     
     // MARK: - StyleCell
