@@ -20,8 +20,8 @@ final class RegistrationViewController: UIViewController, UITextFieldDelegate {
         return view
     }()
     
-    private var textView: UITextView = {
-        var view = UITextView()
+    private var textView: UILabel = {
+        var view = UILabel()
         view.text = "Регистрация в ЗГТ"
         view.textAlignment = .center
         view.textColor = Constans.Color.colorButtonBlue
@@ -31,7 +31,6 @@ final class RegistrationViewController: UIViewController, UITextFieldDelegate {
     
     private var textFieldPhone: UITextField = {
         var view = UITextField()
-//        view.placeholder = "Введите номер телефона"
         view.font = Constans.Fonts.robotoRegular15
         view.borderStyle = UITextField.BorderStyle.roundedRect
         view.autocorrectionType = UITextAutocorrectionType.no
@@ -84,6 +83,9 @@ final class RegistrationViewController: UIViewController, UITextFieldDelegate {
         vc.modalPresentationStyle = .fullScreen
         vc.modalTransitionStyle = .crossDissolve
         self.navigationController?.pushViewController(vc, animated: true)
+        UserDefaults.standard.set(textFieldName.text, forKey: KeysUserDefaults.nameUser)
+        UserDefaults.standard.set(textFieldNickName.text, forKey: KeysUserDefaults.nickNameUser)
+//        UserDefaults.standard.set(response.userID, forKey: KeysUserDefaults.userID)
     }
     
     // MARK: - Lifecycle

@@ -51,7 +51,7 @@ final class ChatTableViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .white
-        title = "Chat"
+        title = "Все чаты"
         navigationItem.largeTitleDisplayMode = .never
         
         self.navigationItem.hidesBackButton = true

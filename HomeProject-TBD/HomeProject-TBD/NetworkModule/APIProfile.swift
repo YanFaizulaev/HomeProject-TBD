@@ -73,7 +73,7 @@ class APIProfile: NetworkServices {
         let url = components?.url
         var request = URLRequest(url: url!)
         request.httpMethod = "PUT"
-        print("<<< MARK: 2.1 URL - \(String(describing: url))")
+        print("<<< MARK: 3.1 URL - \(String(describing: url))")
 
         perform(request: request, completion: parseDecodable(completion: completion))
     }

@@ -11,6 +11,7 @@ enum KeysUserDefaults {
     static let userIsLogged = "userIsLogged"
     static let userHasRegistered = "userHasRegistered"
     
+    static let userPhone = "userPhone"
     static let refreshTokenUser = "refreshTokenUser"
     static let accessTokenUser = "accessTokenUser"
     static let userID = "userID"
@@ -25,6 +26,9 @@ extension UserDefaults {
     }
     @objc dynamic var newUser: Bool {
         return bool(forKey: KeysUserDefaults.userHasRegistered)
+    }
+    @objc dynamic var userPhone: String {
+        return string(forKey: KeysUserDefaults.userPhone) ?? ""
     }
     @objc dynamic var refreshTokenUser: String {
         return string(forKey: KeysUserDefaults.refreshTokenUser) ?? ""
