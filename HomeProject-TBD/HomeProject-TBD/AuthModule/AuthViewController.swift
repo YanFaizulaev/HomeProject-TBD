@@ -14,6 +14,8 @@ final class AuthViewController: UIViewController {
     
     private let serviceAPI = APIAuthNetwork()
     
+    
+    
     // MARK: - View
     private var imageView: UIImageView = {
         var view = UIImageView()
@@ -23,16 +25,17 @@ final class AuthViewController: UIViewController {
         return view
     }()
     
-    private var textFieldNumberPhone: UITextField = {
-        var view = UITextField()
+    private var textFieldNumberPhone: TextFieldPhone = {
+        var view = TextFieldPhone()
         view.placeholder = "Введите номер телефона"
-        view.font = Constans.Fonts.robotoRegular15
-        view.borderStyle = UITextField.BorderStyle.roundedRect
-        view.autocorrectionType = UITextAutocorrectionType.no
-        view.keyboardType = UIKeyboardType.default
-        view.returnKeyType = UIReturnKeyType.done
-        view.clearButtonMode = UITextField.ViewMode.whileEditing
-        view.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
+        view.setPlaceholder("Введите номер телефона", color: UIColor.gray)
+        view.font = Constans.Fonts.robotoItalic15
+        view.cornerRadius = 10
+        view.borderWidth = 1
+        view.borderColor = UIColor.gray
+        view.textColor = .black
+        view.clearButtonMode = .whileEditing
+        view.tintColor = .blue
         return view
     }()
     
@@ -56,16 +59,17 @@ final class AuthViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    private var textFieldSms: UITextField = {
-        var view = UITextField()
+    private var textFieldCode: TextFieldCode = {
+        var view = TextFieldCode()
         view.placeholder = "Введите код с СМС"
+        view.setPlaceholder("Введите код с СМС", color: UIColor.gray)
         view.font = Constans.Fonts.robotoItalic15
-        view.borderStyle = UITextField.BorderStyle.roundedRect
-        view.autocorrectionType = UITextAutocorrectionType.no
-        view.keyboardType = UIKeyboardType.default
-        view.returnKeyType = UIReturnKeyType.done
-        view.clearButtonMode = UITextField.ViewMode.whileEditing
-        view.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
+        view.cornerRadius = 10
+        view.borderWidth = 1
+        view.borderColor = UIColor.gray
+        view.textColor = .black
+        view.clearButtonMode = .whileEditing
+        view.tintColor = .blue
         return view
     }()
 
@@ -84,7 +88,7 @@ final class AuthViewController: UIViewController {
         
         setAuthCheckUser()
         
-        if textFieldSms.text == "133337" {
+        if textFieldCode.text == "133337" {
             let vc = RegistrationViewController()
             vc.modalPresentationStyle = .fullScreen
             vc.modalTransitionStyle = .crossDissolve
@@ -105,7 +109,7 @@ final class AuthViewController: UIViewController {
         view.addSubview(imageView)
         view.addSubview(textFieldNumberPhone)
         view.addSubview(buttonSms)
-        view.addSubview(textFieldSms)
+        view.addSubview(textFieldCode)
         view.addSubview(buttonRegistration)
         
         let margins = view.safeAreaLayoutGuide
@@ -128,22 +132,23 @@ final class AuthViewController: UIViewController {
         buttonSms.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: -15).isActive = true
         buttonSms.topAnchor.constraint(equalTo: textFieldNumberPhone.topAnchor, constant: 0).isActive = true
         
-        textFieldSms.translatesAutoresizingMaskIntoConstraints = false
-        textFieldSms.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        textFieldSms.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 15).isActive = true
-        textFieldSms.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: -15).isActive = true
-        textFieldSms.topAnchor.constraint(equalTo: textFieldNumberPhone.bottomAnchor, constant: 20).isActive = true
+        textFieldCode.translatesAutoresizingMaskIntoConstraints = false
+        textFieldCode.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        textFieldCode.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 15).isActive = true
+        textFieldCode.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: -15).isActive = true
+        textFieldCode.topAnchor.constraint(equalTo: textFieldNumberPhone.bottomAnchor, constant: 20).isActive = true
         
         buttonRegistration.translatesAutoresizingMaskIntoConstraints = false
         buttonRegistration.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        buttonRegistration.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 25).isActive = true
-        buttonRegistration.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: -25).isActive = true
-        buttonRegistration.topAnchor.constraint(equalTo: textFieldSms.bottomAnchor, constant: 20).isActive = true
+        buttonRegistration.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 15).isActive = true
+        buttonRegistration.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: -15).isActive = true
+        buttonRegistration.topAnchor.constraint(equalTo: textFieldCode.bottomAnchor, constant: 20).isActive = true
         
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.backgroundColor = .white
     }
     
@@ -162,7 +167,7 @@ final class AuthViewController: UIViewController {
     }
     
     private func setAuthCheckUser () {
-        serviceAPI.fetchAuthCheckUser(phone: textFieldNumberPhone.text ?? "", code: textFieldSms.text ?? "") { result in
+        serviceAPI.fetchAuthCheckUser(phone: textFieldNumberPhone.text ?? "", code: textFieldCode.text ?? "") { result in
             switch result {
             case .success(let response):
                 UserDefaults.standard.set(response.access_token, forKey: KeysUserDefaults.accessTokenUser)

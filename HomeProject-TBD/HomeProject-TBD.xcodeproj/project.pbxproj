@@ -15,6 +15,7 @@
 		CE43878529F9794500DD7CF0 /* APIRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43878429F9794500DD7CF0 /* APIRegistration.swift */; };
 		CE43878729F97D3500DD7CF0 /* APIProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43878629F97D3500DD7CF0 /* APIProfile.swift */; };
 		CE43878929F9C0A300DD7CF0 /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43878829F9C0A300DD7CF0 /* Extension+String.swift */; };
+		CE43878B29FA638300DD7CF0 /* TextFieldCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43878A29FA638300DD7CF0 /* TextFieldCustom.swift */; };
 		CEBF23F729F66E1C00716BD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF23F629F66E1C00716BD2 /* AppDelegate.swift */; };
 		CEBF23F929F66E1C00716BD2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF23F829F66E1C00716BD2 /* SceneDelegate.swift */; };
 		CEBF23FB29F66E1C00716BD2 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF23FA29F66E1C00716BD2 /* AuthViewController.swift */; };
@@ -47,6 +48,7 @@
 		CE43878429F9794500DD7CF0 /* APIRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRegistration.swift; sourceTree = "<group>"; };
 		CE43878629F97D3500DD7CF0 /* APIProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProfile.swift; sourceTree = "<group>"; };
 		CE43878829F9C0A300DD7CF0 /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
+		CE43878A29FA638300DD7CF0 /* TextFieldCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCustom.swift; sourceTree = "<group>"; };
 		CEBF23F329F66E1C00716BD2 /* HomeProject-TBD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HomeProject-TBD.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEBF23F629F66E1C00716BD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEBF23F829F66E1C00716BD2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 		CEBF241229F68C8600716BD2 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				CE43878A29FA638300DD7CF0 /* TextFieldCustom.swift */,
 				CEBF241029F68C7D00716BD2 /* Constans.swift */,
 				CEBF241C29F6A3F100716BD2 /* Font */,
 			);
@@ -385,6 +388,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE43878B29FA638300DD7CF0 /* TextFieldCustom.swift in Sources */,
 				CEBF243929F7BA5900716BD2 /* Extension+UIImage.swift in Sources */,
 				CEBF240E29F68AE900716BD2 /* RegistrationViewController.swift in Sources */,
 				CEBF23FB29F66E1C00716BD2 /* AuthViewController.swift in Sources */,

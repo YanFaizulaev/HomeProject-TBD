@@ -323,7 +323,6 @@ final class ProfileViewController: UIViewController, UITextFieldDelegate {
         self.textFieldAboutMe.delegate = self
 
         setnavigationItem()
-        getZodiacSign()
     }
     
     private func setnavigationItem () {
@@ -361,17 +360,6 @@ final class ProfileViewController: UIViewController, UITextFieldDelegate {
        }
        return false
     }
-    
-    func getZodiacSign() {
-        let dateString = textFieldDateOfBirth.text // "1990-05-25"
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        if let date = dateFormatter.date(from: dateString ?? "1990-05-25") {
-            let zodiacSign = dateString!.getZodiacSign(for: date)
-            print(zodiacSign)
-            textFieldZodiacSign.text = zodiacSign
-        }
-    }
-    
+
 }
 

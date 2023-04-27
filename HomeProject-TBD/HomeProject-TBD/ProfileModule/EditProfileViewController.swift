@@ -325,11 +325,14 @@ final class EditProfileViewController: UIViewController, UITextFieldDelegate {
         textFieldAboutMe.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: -10).isActive = true
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .white
         title = "Редактирование"
+        
+        createDatePicker()
         
         textFieldPhone.text = UserDefaults.standard.userPhone
         textFieldName.text = UserDefaults.standard.nameUser
@@ -355,6 +358,43 @@ final class EditProfileViewController: UIViewController, UITextFieldDelegate {
        if textField == textFieldPhone {
        }
        return false
+    }
+    
+    let datePicker = UIDatePicker()
+    
+    private func createDatePicker() {
+        
+        let toolBar = UIToolbar()
+        toolBar.sizeToFit()
+        
+        let flexible = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
+        toolBar.setItems([flexible, doneButton], animated: true)
+        
+        textFieldDateOfBirth.inputAccessoryView = toolBar
+        textFieldDateOfBirth.inputView = datePicker
+        datePicker.datePickerMode = .date
+        datePicker.preferredDatePickerStyle = .wheels
+        datePicker.addTarget(self, action: #selector(doneAction), for: .valueChanged)
+    }
+    
+    @objc func doneAction() {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .none
+        
+        textFieldDateOfBirth.text = formatter.string(from: datePicker.date)
+        textFieldZodiacSign.text = textFieldDateOfBirth.text!.getZodiacSign()
+    }
+    
+    @objc func donePressed() {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .none
+        
+        textFieldDateOfBirth.text = formatter.string(from: datePicker.date)
+        textFieldZodiacSign.text = textFieldDateOfBirth.text!.getZodiacSign()
+        self.view.endEditing(true)
     }
     
 }

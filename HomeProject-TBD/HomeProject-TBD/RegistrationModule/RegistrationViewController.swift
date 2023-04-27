@@ -29,41 +29,43 @@ final class RegistrationViewController: UIViewController, UITextFieldDelegate {
         return view
     }()
     
-    private var textFieldPhone: UITextField = {
-        var view = UITextField()
-        view.font = Constans.Fonts.robotoRegular15
-        view.borderStyle = UITextField.BorderStyle.roundedRect
-        view.autocorrectionType = UITextAutocorrectionType.no
-        view.keyboardType = UIKeyboardType.default
-        view.returnKeyType = UIReturnKeyType.done
-        view.clearButtonMode = UITextField.ViewMode.whileEditing
-        view.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
+    private var textFieldNumberPhone: TextFieldPhone = {
+        var view = TextFieldPhone()
+        view.font = Constans.Fonts.robotoItalic15
+        view.cornerRadius = 10
+        view.borderWidth = 1
+        view.borderColor = UIColor.gray
+        view.textColor = .black
+        view.clearButtonMode = .whileEditing
+        view.tintColor = .blue
         return view
     }()
     
-    private var textFieldName: UITextField = {
-        var view = UITextField()
+    private var textFieldName: TextFieldCustom = {
+        var view = TextFieldCustom()
         view.placeholder = "Введите Имя"
+        view.setPlaceholder("Введите Имя", color: UIColor.gray)
         view.font = Constans.Fonts.robotoRegular15
-        view.borderStyle = UITextField.BorderStyle.roundedRect
-        view.autocorrectionType = UITextAutocorrectionType.no
-        view.keyboardType = UIKeyboardType.default
-        view.returnKeyType = UIReturnKeyType.done
-        view.clearButtonMode = UITextField.ViewMode.whileEditing
-        view.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
+        view.cornerRadius = 10
+        view.borderWidth = 1
+        view.borderColor = UIColor.gray
+        view.textColor = .black
+        view.clearButtonMode = .whileEditing
+        view.tintColor = .blue
         return view
     }()
     
-    private var textFieldNickName: UITextField = {
-        var view = UITextField()
+    private var textFieldNickName: TextFieldUserName = {
+        var view = TextFieldUserName()
         view.placeholder = "Введите Ник"
+        view.setPlaceholder("Введите Ник", color: UIColor.gray)
         view.font = Constans.Fonts.robotoRegular15
-        view.borderStyle = UITextField.BorderStyle.roundedRect
-        view.autocorrectionType = UITextAutocorrectionType.no
-        view.keyboardType = UIKeyboardType.default
-        view.returnKeyType = UIReturnKeyType.done
-        view.clearButtonMode = UITextField.ViewMode.whileEditing
-        view.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
+        view.cornerRadius = 10
+        view.borderWidth = 1
+        view.borderColor = UIColor.gray
+        view.textColor = .black
+        view.clearButtonMode = .whileEditing
+        view.tintColor = .blue
         return view
     }()
     
@@ -94,7 +96,7 @@ final class RegistrationViewController: UIViewController, UITextFieldDelegate {
         
         view.addSubview(imageView)
         view.addSubview(textView)
-        view.addSubview(textFieldPhone)
+        view.addSubview(textFieldNumberPhone)
         view.addSubview(textFieldName)
         view.addSubview(textFieldNickName)
         view.addSubview(buttonRegistration)
@@ -111,19 +113,19 @@ final class RegistrationViewController: UIViewController, UITextFieldDelegate {
         textView.heightAnchor.constraint(equalToConstant: 40).isActive = true
         textView.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 15).isActive = true
         textView.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: -15).isActive = true
-        textView.bottomAnchor.constraint(equalTo: textFieldPhone.topAnchor, constant: -20).isActive = true
+        textView.bottomAnchor.constraint(equalTo: textFieldNumberPhone.topAnchor, constant: -20).isActive = true
         
-        textFieldPhone.translatesAutoresizingMaskIntoConstraints = false
-        textFieldPhone.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        textFieldPhone.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
-        textFieldPhone.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 15).isActive = true
-        textFieldPhone.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: -15).isActive = true
+        textFieldNumberPhone.translatesAutoresizingMaskIntoConstraints = false
+        textFieldNumberPhone.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        textFieldNumberPhone.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+        textFieldNumberPhone.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 15).isActive = true
+        textFieldNumberPhone.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: -15).isActive = true
         
         textFieldName.translatesAutoresizingMaskIntoConstraints = false
         textFieldName.heightAnchor.constraint(equalToConstant: 40).isActive = true
         textFieldName.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 15).isActive = true
         textFieldName.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: -15).isActive = true
-        textFieldName.topAnchor.constraint(equalTo: textFieldPhone.bottomAnchor, constant: 20).isActive = true
+        textFieldName.topAnchor.constraint(equalTo: textFieldNumberPhone.bottomAnchor, constant: 20).isActive = true
         
         textFieldNickName.translatesAutoresizingMaskIntoConstraints = false
         textFieldNickName.heightAnchor.constraint(equalToConstant: 40).isActive = true
@@ -133,8 +135,8 @@ final class RegistrationViewController: UIViewController, UITextFieldDelegate {
         
         buttonRegistration.translatesAutoresizingMaskIntoConstraints = false
         buttonRegistration.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        buttonRegistration.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 25).isActive = true
-        buttonRegistration.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: -25).isActive = true
+        buttonRegistration.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 15).isActive = true
+        buttonRegistration.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: -15).isActive = true
         buttonRegistration.topAnchor.constraint(equalTo: textFieldNickName.bottomAnchor, constant: 20).isActive = true
     }
     
@@ -142,15 +144,15 @@ final class RegistrationViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         view.backgroundColor = .white
-        textFieldPhone.text = self.phone
-        self.textFieldPhone.delegate = self
+        textFieldNumberPhone.text = self.phone
+        self.textFieldNumberPhone.delegate = self
         
         self.navigationController?.navigationBar.tintColor = UIColor.gray
         self.navigationController?.navigationBar.topItem?.title = " "
     }
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-       if textField == textFieldPhone {
+       if textField == textFieldNumberPhone {
        }
        return false
     }
