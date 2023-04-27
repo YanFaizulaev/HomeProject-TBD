@@ -17,12 +17,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        let navigationController = UINavigationController(rootViewController: AuthViewController())
-        navigationController.navigationBar.prefersLargeTitles = true
+        var viewController = UIViewController()
+        if UserDefaults.standard.newUser == false {
+            viewController = UINavigationController(rootViewController: AuthViewController())
+            
+        } else if UserDefaults.standard.userIsLogged == false{
+            viewController = UINavigationController(rootViewController: RegistrationViewController())
+        } else {
+            viewController = UINavigationController(rootViewController: ChatTableViewController())
+        }
         
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = navigationController
+        window?.rootViewController = viewController
         window?.makeKeyAndVisible()
     }
 

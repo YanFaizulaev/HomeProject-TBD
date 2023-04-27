@@ -95,6 +95,7 @@ final class AuthViewController: UIViewController {
             vc.phone = textFieldNumberPhone.text
             self.navigationController?.pushViewController(vc, animated: true)
             UserDefaults.standard.set(textFieldNumberPhone.text, forKey: KeysUserDefaults.userPhone)
+            UserDefaults.standard.set(true, forKey: KeysUserDefaults.userIsLogged)
         } else {
             let alert = UIAlertController(title: "Код для подтверждения неверный.", message: nil, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Повторить ввод", style: .cancel))

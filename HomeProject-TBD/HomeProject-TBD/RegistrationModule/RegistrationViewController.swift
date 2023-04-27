@@ -88,6 +88,7 @@ final class RegistrationViewController: UIViewController, UITextFieldDelegate {
         UserDefaults.standard.set(textFieldName.text, forKey: KeysUserDefaults.nameUser)
         UserDefaults.standard.set(textFieldNickName.text, forKey: KeysUserDefaults.nickNameUser)
 //        UserDefaults.standard.set(response.userID, forKey: KeysUserDefaults.userID)
+        UserDefaults.standard.set(true, forKey: KeysUserDefaults.userHasRegistered)
     }
     
     // MARK: - Lifecycle

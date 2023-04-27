@@ -12,9 +12,9 @@ final class EditProfileViewController: UIViewController, UITextFieldDelegate {
     // MARK: - View
     private var imageViewUser: UIImageView = {
         var view = UIImageView()
-//         поменять
-        view.image = Constans.Image.imageLogo
-        view.contentMode = .scaleAspectFit
+        view.layer.cornerRadius = 100
+        view.contentMode = .scaleAspectFill
+        view.layer.masksToBounds = true
         return view
     }()
     
@@ -30,7 +30,11 @@ final class EditProfileViewController: UIViewController, UITextFieldDelegate {
     }()
     
     @objc func buttonReset () {
-        print("Замена картинки")
+        let vc = UIImagePickerController()
+        vc.sourceType = .photoLibrary
+        vc.delegate = self
+        vc.allowsEditing = true
+        present(vc, animated: true)
     }
     
     lazy var labelNumberPhone: UILabel = {
@@ -333,10 +337,7 @@ final class EditProfileViewController: UIViewController, UITextFieldDelegate {
         title = "Редактирование"
         
         createDatePicker()
-        
-        textFieldPhone.text = UserDefaults.standard.userPhone
-        textFieldName.text = UserDefaults.standard.nameUser
-        textFieldNickName.text = UserDefaults.standard.nickNameUser
+        updateData()
         
         self.textFieldPhone.delegate = self
         self.textFieldNickName.delegate = self
@@ -350,14 +351,53 @@ final class EditProfileViewController: UIViewController, UITextFieldDelegate {
     }
     
     @objc func rightBarButton() {
-        navigationController?.popViewController(animated: false)
-        self.dismiss(animated: false, completion: nil)
+        
+        if textFieldName.text!.count == 0 {
+            let alert = UIAlertController(title: "Заполните пожалуйста поле с вашим именем.", message: nil, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Повторить ввод", style: .cancel))
+            self.present(alert, animated: true, completion: nil)
+        } else if textFieldCity.text!.count == 0 {
+            let alert = UIAlertController(title: "Заполните пожалуйста поле с вашим местом жительства.", message: nil, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Повторить ввод", style: .cancel))
+            self.present(alert, animated: true, completion: nil)
+        }  else if textFieldDateOfBirth.text!.count == 0 {
+            let alert = UIAlertController(title: "Заполните пожалуйста поле с вашим днем рождения.", message: nil, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Повторить ввод", style: .cancel))
+            self.present(alert, animated: true, completion: nil)
+        }  else if textFieldAboutMe.text!.count == 0 {
+            let alert = UIAlertController(title: "Заполните пожалуйста поле о себе.", message: nil, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Повторить ввод", style: .cancel))
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            navigationController?.popViewController(animated: false)
+            self.dismiss(animated: false, completion: nil)
+            UserDefaults.standard.set(textFieldName.text, forKey: KeysUserDefaults.nameUser)
+            UserDefaults.standard.set(textFieldCity.text, forKey: KeysUserDefaults.cityUser)
+            UserDefaults.standard.set(textFieldDateOfBirth.text, forKey: KeysUserDefaults.dateOfBirthUser)
+            UserDefaults.standard.set(textFieldZodiacSign.text, forKey: KeysUserDefaults.zodiacSignUser)
+            UserDefaults.standard.set(textFieldAboutMe.text, forKey: KeysUserDefaults.aboutMeUser)
+        }
     }
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
        if textField == textFieldPhone {
        }
        return false
+    }
+    
+    private func updateData () {
+        textFieldPhone.text = UserDefaults.standard.userPhone
+        textFieldName.text = UserDefaults.standard.nameUser
+        textFieldNickName.text = UserDefaults.standard.nickNameUser
+        textFieldCity.text = UserDefaults.standard.cityUser
+        textFieldDateOfBirth.text = UserDefaults.standard.dateOfBirthUser
+        textFieldZodiacSign.text = UserDefaults.standard.zodiacSignUser
+        textFieldAboutMe.text = UserDefaults.standard.aboutMeUser
+        
+        guard let data = UserDefaults.standard.data(forKey: KeysUserDefaults.imageUser) else { return }
+             let decoded = try! PropertyListDecoder().decode(Data.self, from: data)
+             let image = UIImage(data: decoded)
+        imageViewUser.image = image
     }
     
     let datePicker = UIDatePicker()
@@ -397,4 +437,26 @@ final class EditProfileViewController: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
     }
     
+}
+
+extension EditProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    
+        if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage") ] as? UIImage {
+            imageViewUser.image = image
+            
+            guard let data = image.jpegData(compressionQuality: 0.5) else { return }
+            let encoded = try! PropertyListEncoder().encode(data)
+            UserDefaults.standard.set(encoded, forKey: KeysUserDefaults.imageUser)
+            
+        }
+        
+        picker.dismiss(animated: true)
+    }
+
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true)
+    }
 }

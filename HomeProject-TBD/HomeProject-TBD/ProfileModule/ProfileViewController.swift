@@ -15,7 +15,9 @@ final class ProfileViewController: UIViewController, UITextFieldDelegate {
     private var imageViewUser: UIImageView = {
         var view = UIImageView()
         view.image = Constans.Image.imageLogo
-        view.contentMode = .scaleAspectFit
+        view.layer.cornerRadius = 100
+        view.contentMode = .scaleAspectFill
+        view.layer.masksToBounds = true
         return view
     }()
     
@@ -310,9 +312,7 @@ final class ProfileViewController: UIViewController, UITextFieldDelegate {
         view.backgroundColor = .white
         title = "Ваш профиль"
         
-        textFieldPhone.text = UserDefaults.standard.userPhone
-        textFieldName.text = UserDefaults.standard.nameUser
-        textFieldNickName.text = UserDefaults.standard.nickNameUser
+        updateData()
         
         self.textFieldPhone.delegate = self
         self.textFieldName.delegate = self
@@ -323,6 +323,27 @@ final class ProfileViewController: UIViewController, UITextFieldDelegate {
         self.textFieldAboutMe.delegate = self
 
         setnavigationItem()
+    }
+    
+    // MARK: - ViewDidAppear
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        updateData()
+    }
+    
+    private func updateData () {
+        textFieldPhone.text = UserDefaults.standard.userPhone
+        textFieldName.text = UserDefaults.standard.nameUser
+        textFieldNickName.text = UserDefaults.standard.nickNameUser
+        textFieldCity.text = UserDefaults.standard.cityUser
+        textFieldDateOfBirth.text = UserDefaults.standard.dateOfBirthUser
+        textFieldZodiacSign.text = UserDefaults.standard.zodiacSignUser
+        textFieldAboutMe.text = UserDefaults.standard.aboutMeUser
+        
+        guard let data = UserDefaults.standard.data(forKey: KeysUserDefaults.imageUser) else { return }
+             let decoded = try! PropertyListDecoder().decode(Data.self, from: data)
+             let image = UIImage(data: decoded)
+        imageViewUser.image = image
     }
     
     private func setnavigationItem () {
@@ -353,6 +374,9 @@ final class ProfileViewController: UIViewController, UITextFieldDelegate {
                 print("Error loading recommended podcasts: \(error.localizedDescription)")
             }
         }
+        let alert = UIAlertController(title: "Возникли проблемы. Мы их решаем)", message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Повторите запрос", style: .cancel))
+        self.present(alert, animated: true, completion: nil)
     }
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
