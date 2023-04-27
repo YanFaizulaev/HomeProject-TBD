@@ -7,66 +7,66 @@
 
 import UIKit
 
-final class RegistrationViewController: UIViewController, UITextFieldDelegate {
+final class RegistrationViewController: UIViewController {
     
+    // MARK: - Буфер для номера телефона
     var phone: String?
     
     // MARK: - View
-    private var imageView: UIImageView = {
-        var view = UIImageView()
-        view.image = Constans.Image.imageLogo
-        view.tintColor = .black
-        view.contentMode = .scaleAspectFit
-        return view
+    private var imageViewLogo: UIImageView = {
+        var imageView = UIImageView()
+        imageView.image = Constans.Image.imageLogo
+        imageView.tintColor = .clear
+        imageView.layer.cornerRadius = 50
+        imageView.contentMode = .scaleAspectFill
+        imageView.layer.masksToBounds = true
+        return imageView
     }()
     
     private var textView: UILabel = {
-        var view = UILabel()
-        view.text = "Регистрация в ЗГТ"
-        view.textAlignment = .center
-        view.textColor = Constans.Color.colorButtonBlue
-        view.font = Constans.Fonts.robotoRegular15
-        return view
+        var label = UILabel()
+        label.text = "Регистрация в ЗГТ"
+        label.textAlignment = .center
+        label.textColor = Constans.Color.colorButtonBlue
+        label.font = Constans.Fonts.robotoRegular15
+        return label
     }()
     
     private var textFieldNumberPhone: TextFieldPhone = {
-        var view = TextFieldPhone()
-        view.font = Constans.Fonts.robotoItalic15
-        view.cornerRadius = 10
-        view.borderWidth = 1
-        view.borderColor = UIColor.gray
-        view.textColor = .black
-        view.clearButtonMode = .whileEditing
-        view.tintColor = .blue
-        return view
+        var textField = TextFieldPhone()
+        textField.font = Constans.Fonts.robotoItalic15
+        textField.cornerRadius = 10
+        textField.borderWidth = 1
+        textField.borderColor = UIColor.gray
+        textField.clearButtonMode = .whileEditing
+        textField.tintColor = .blue
+        return textField
     }()
     
     private var textFieldName: TextFieldCustom = {
-        var view = TextFieldCustom()
-        view.placeholder = "Введите Имя"
-        view.setPlaceholder("Введите Имя", color: UIColor.gray)
-        view.font = Constans.Fonts.robotoRegular15
-        view.cornerRadius = 10
-        view.borderWidth = 1
-        view.borderColor = UIColor.gray
-        view.textColor = .black
-        view.clearButtonMode = .whileEditing
-        view.tintColor = .blue
-        return view
+        var textField = TextFieldCustom()
+        textField.placeholder = "Введите Имя"
+        textField.setPlaceholder("Введите Имя", color: UIColor.gray)
+        textField.font = Constans.Fonts.robotoRegular15
+        textField.cornerRadius = 10
+        textField.borderWidth = 1
+        textField.borderColor = UIColor.gray
+        textField.clearButtonMode = .whileEditing
+        textField.tintColor = .blue
+        return textField
     }()
     
     private var textFieldNickName: TextFieldUserName = {
-        var view = TextFieldUserName()
-        view.placeholder = "Введите Ник"
-        view.setPlaceholder("Введите Ник", color: UIColor.gray)
-        view.font = Constans.Fonts.robotoRegular15
-        view.cornerRadius = 10
-        view.borderWidth = 1
-        view.borderColor = UIColor.gray
-        view.textColor = .black
-        view.clearButtonMode = .whileEditing
-        view.tintColor = .blue
-        return view
+        var textField = TextFieldUserName()
+        textField.placeholder = "Введите Ник"
+        textField.setPlaceholder("Введите Ник", color: UIColor.gray)
+        textField.font = Constans.Fonts.robotoRegular15
+        textField.cornerRadius = 10
+        textField.borderWidth = 1
+        textField.borderColor = UIColor.gray
+        textField.clearButtonMode = .whileEditing
+        textField.tintColor = .blue
+        return textField
     }()
     
     private lazy var buttonRegistration : UIButton = {
@@ -81,21 +81,30 @@ final class RegistrationViewController: UIViewController, UITextFieldDelegate {
     }()
     
     @objc func buttonNextView () {
-        let vc = ChatTableViewController()
-        vc.modalPresentationStyle = .fullScreen
-        vc.modalTransitionStyle = .crossDissolve
-        self.navigationController?.pushViewController(vc, animated: true)
-        UserDefaults.standard.set(textFieldName.text, forKey: KeysUserDefaults.nameUser)
-        UserDefaults.standard.set(textFieldNickName.text, forKey: KeysUserDefaults.nickNameUser)
-//        UserDefaults.standard.set(response.userID, forKey: KeysUserDefaults.userID)
-        UserDefaults.standard.set(true, forKey: KeysUserDefaults.userHasRegistered)
+        if textFieldName.text!.count == 0 {
+            let alert = UIAlertController(title: "Заполните пожалуйста поле с вашим именем.", message: nil, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Повторить ввод", style: .cancel))
+            self.present(alert, animated: true, completion: nil)
+        } else if textFieldNickName.text!.count == 0 {
+            let alert = UIAlertController(title: "Заполните пожалуйста поле с вашим никнеймом.", message: nil, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Повторить ввод", style: .cancel))
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            let vc = ChatTableViewController()
+            vc.modalPresentationStyle = .fullScreen
+            vc.modalTransitionStyle = .crossDissolve
+            self.navigationController?.pushViewController(vc, animated: true)
+            UserDefaults.standard.set(textFieldName.text, forKey: KeysUserDefaults.nameUser)
+            UserDefaults.standard.set(textFieldNickName.text, forKey: KeysUserDefaults.nickNameUser)
+            //        UserDefaults.standard.set(response.userID, forKey: KeysUserDefaults.userID)
+            UserDefaults.standard.set(true, forKey: KeysUserDefaults.userHasRegistered)
+        }
     }
     
     // MARK: - Lifecycle
     override func loadView() {
         super.loadView()
-        
-        view.addSubview(imageView)
+        view.addSubview(imageViewLogo)
         view.addSubview(textView)
         view.addSubview(textFieldNumberPhone)
         view.addSubview(textFieldName)
@@ -104,11 +113,11 @@ final class RegistrationViewController: UIViewController, UITextFieldDelegate {
 
         let margins = view.safeAreaLayoutGuide
         
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.heightAnchor.constraint(equalToConstant: 100).isActive = true
-        imageView.widthAnchor.constraint(equalToConstant: 100).isActive = true
-        imageView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        imageView.bottomAnchor.constraint(equalTo: textView.topAnchor, constant: -20).isActive = true
+        imageViewLogo.translatesAutoresizingMaskIntoConstraints = false
+        imageViewLogo.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        imageViewLogo.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        imageViewLogo.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        imageViewLogo.bottomAnchor.constraint(equalTo: textView.topAnchor, constant: -20).isActive = true
         
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.heightAnchor.constraint(equalToConstant: 40).isActive = true
@@ -143,19 +152,28 @@ final class RegistrationViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = .white
+        setView()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
+    private func setView () {
+        view.backgroundColor = .systemBackground
         textFieldNumberPhone.text = self.phone
         self.textFieldNumberPhone.delegate = self
         
         self.navigationController?.navigationBar.tintColor = UIColor.gray
         self.navigationController?.navigationBar.topItem?.title = " "
     }
-    
+}
+
+extension RegistrationViewController: UITextFieldDelegate {
+    // MARK: - Functions - Delegate
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
        if textField == textFieldNumberPhone {
        }
        return false
     }
-    
 }

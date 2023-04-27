@@ -8,7 +8,6 @@
 import UIKit
 
 enum Constans {
-
     enum Fonts {
         static var robotoRegular15: UIFont? {
             UIFont(name: "Roboto-Regular", size: 15)
@@ -23,12 +22,11 @@ enum Constans {
             UIFont(name: "Roboto-Italic", size: 12)
         }
     }
-
+    
     enum Image {
         static let imageLogo = UIImage(named: "3690476")
-
     }
-
+    
     enum Color {
         static var colorButtonBlue : UIColor? {
             UIColor(hexString: "383FF5")

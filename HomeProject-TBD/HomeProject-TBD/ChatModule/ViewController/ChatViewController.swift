@@ -10,22 +10,30 @@ import MessageKit
 import MessageInputBar
 import InputBarAccessoryView
 
-class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate {
+final class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate {
     
-    var messages = [Message]()
+    // MARK: - Model
+    private var messages = [Message]()
     
-    var currentUser = Sender(senderId: "self", displayName: "Slava")
-    let otherUser = Sender(senderId: "other", displayName: "Nika")
+    private let currentUser = Sender(senderId: "self", displayName: "Slava")
+    private let otherUser = Sender(senderId: "other", displayName: "Nika")
     
     var file: ChatTableViewModel?
     
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setView()
         setChat()
-        
-        view.backgroundColor = .white
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
+    private func setView() {
         title = file?.labelNameChat
+        view.backgroundColor = .systemBackground
         
         let image = UIImage(systemName: "doc.text.magnifyingglass")
         //        let image = file?.labelImage.withTintColor(.white)
@@ -36,15 +44,12 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate 
     }
     
     @objc func rightBarButton() {
-        print("Информация про чат")
-//        let vc = InfoChatViewController()
-//        vc.modalPresentationStyle = .fullScreen
-//        vc.modalTransitionStyle = .crossDissolve
-//        self.navigationController?.pushViewController(vc, animated: true)
+        let alert = UIAlertController(title: "Чат - \(file?.labelNameChat ?? "")", message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Хорошо", style: .cancel))
+        self.present(alert, animated: true, completion: nil)
     }
     
     private func setChat () {
-        // message
         messages.append(Message(messageId: "1",
                                 sender: currentSender,
                                 sentDate: Date().addingTimeInterval(-2000),
@@ -57,12 +62,10 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate 
                                 sender: currentSender,
                                 sentDate: Date(),
                                 kind: .text("Выйдешь завтра на смену?")))
-        
-        // Set up message input bar
+
         messageInputBar.delegate = self
         messageInputBar.sendButton.setTitleColor(.blue, for: .normal)
-        
-        // Set up messages collection view
+
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
@@ -70,7 +73,6 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate 
 }
 
 extension ChatViewController: MessagesDataSource {
-    
     var currentSender: MessageKit.SenderType {
         return currentUser
     }
@@ -87,7 +89,6 @@ extension ChatViewController: MessagesDataSource {
             return messages.count
         }
     }
-    
 }
 
 extension ChatViewController: MessagesLayoutDelegate {

@@ -18,15 +18,14 @@ final class ChatTableViewController: UIViewController {
             ]
     
     // MARK: - View
-    let refreshControl = UIRefreshControl()
+    private let refreshControl = UIRefreshControl()
     
-    lazy var tableView: UITableView = {
-        let view = UITableView(frame: .zero)
-        view.backgroundColor = .white
-        view.rowHeight = 60
-        view.separatorStyle = .none
-        view.addSubview(refreshControl)
-        return view
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView(frame: .zero)
+        tableView.rowHeight = 60
+        tableView.separatorStyle = .none
+        tableView.addSubview(refreshControl)
+        return tableView
     }()
     
     private let fileCellIndentifier = "FileTableViewCell"
@@ -34,7 +33,6 @@ final class ChatTableViewController: UIViewController {
     // MARK: - Lifecycle
     override func loadView() {
         super.loadView()
-
         view.addSubview(tableView)
         
         let margins = view.safeAreaLayoutGuide
@@ -44,14 +42,19 @@ final class ChatTableViewController: UIViewController {
         tableView.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 0).isActive = true
         tableView.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: 0).isActive = true
         tableView.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: 0).isActive = true
-        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = .white
+        setView()
+    }
+    
+    private func setView() {
         title = "Все чаты"
+        view.backgroundColor = .systemBackground
+        navigationController?.navigationBar.titleTextAttributes = [
+            .foregroundColor: Constans.Color.colorButtonBlue!,
+            .font: Constans.Fonts.robotoRegular15!]
         navigationItem.largeTitleDisplayMode = .never
         
         self.navigationItem.hidesBackButton = true
@@ -71,11 +74,10 @@ final class ChatTableViewController: UIViewController {
     }
     
     @objc func refresh(_ sender: AnyObject) {
-        // Функция для обновление данных
+// Функция для обновление данных
 //        updateData()
         refreshControl.endRefreshing()
     }
-
 }
 
 extension ChatTableViewController: UITableViewDataSource, UITableViewDelegate {
@@ -87,6 +89,11 @@ extension ChatTableViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: fileCellIndentifier) as? ChatTableViewCell
         let viewModel = table[indexPath.row]
         cell?.configure(viewModel)
+        
+        cell?.layer.borderColor = UIColor.darkGray.cgColor
+        cell?.layer.borderWidth = 1
+        cell?.layer.cornerRadius = 8
+        cell?.clipsToBounds = true
         return cell ?? UITableViewCell()
     }
     

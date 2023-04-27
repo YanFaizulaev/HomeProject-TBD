@@ -22,7 +22,6 @@ enum KeysUserDefaults {
     static let dateOfBirthUser = "dateOfBirthUser"
     static let zodiacSignUser = "zodiacSignUser"
     static let aboutMeUser = "aboutMeUser"
-    
 }
 
 extension UserDefaults {

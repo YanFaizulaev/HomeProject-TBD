@@ -10,16 +10,17 @@ import UIKit
 final class ChatTableViewCell: UITableViewCell {
     
     // MARK: - View
-    lazy var labelImage: UIImageView = {
+    private lazy var imageViewLabel: UIImageView = {
         let imageView = UIImageView()
-        imageView.tintColor = .black
-        imageView.contentMode = .scaleAspectFit
+        imageView.layer.cornerRadius = 25
+        imageView.contentMode = .scaleAspectFill
+        imageView.layer.masksToBounds = true
         return imageView
     }()
     
-    lazy var labelNameChat: UILabel = {
+    private lazy var labelNameChat: UILabel = {
         let label = UILabel()
-        label.textColor = .black
+        label.textColor = Constans.Color.colorButtonBlue
         label.font = Constans.Fonts.robotoRegular15
         label.adjustsFontForContentSizeCategory = true
         label.numberOfLines = 1
@@ -27,7 +28,7 @@ final class ChatTableViewCell: UITableViewCell {
         return label
     }()
     
-    lazy var labelNameUser: UILabel = {
+    private lazy var labelNameUser: UILabel = {
         let label = UILabel()
         label.font = Constans.Fonts.robotoRegular15
         label.adjustsFontForContentSizeCategory = true
@@ -37,7 +38,7 @@ final class ChatTableViewCell: UITableViewCell {
         return label
     }()
     
-    lazy var labelText: UILabel = {
+    private lazy var labelText: UILabel = {
         let label = UILabel()
         label.font = Constans.Fonts.robotoItalic15
         label.adjustsFontForContentSizeCategory = true
@@ -47,9 +48,8 @@ final class ChatTableViewCell: UITableViewCell {
         return label
     }()
     
-    // MARK: -Right side of the cell
-    
-    lazy var labelTime: UILabel = {
+    // MARK: - Right side of the cell
+    private lazy var labelTime: UILabel = {
         let label = UILabel()
         label.font = Constans.Fonts.robotoItalic12
         label.adjustsFontForContentSizeCategory = true
@@ -59,7 +59,7 @@ final class ChatTableViewCell: UITableViewCell {
         return label
     }()
     
-    lazy var labelMessage: UILabel = {
+    private lazy var labelMessage: UILabel = {
         let label = UILabel(frame: CGRect(x: 10, y: -10, width: 20, height: 20))
         label.layer.borderColor = UIColor.clear.cgColor
         label.layer.borderWidth = 2
@@ -72,24 +72,22 @@ final class ChatTableViewCell: UITableViewCell {
         return label
     }()
 
-      // button
-    lazy var buttonMessage : UIButton = {
-        let rightButton = UIButton(frame: CGRect(x: 0, y: 0, width: 18, height: 16))
-        rightButton.setBackgroundImage(UIImage(systemName: "message"), for: .normal)
-        rightButton.setTitleColor(.black, for: .normal)
-        rightButton.addTarget(self, action: #selector(rightButtonTouched), for: .touchUpInside)
-        rightButton.addSubview(labelMessage)
-        return rightButton
+    private lazy var buttonMessage : UIButton = {
+        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 18, height: 16))
+        button.setBackgroundImage(UIImage(systemName: "message"), for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.addTarget(self, action: #selector(rightButtonTouched), for: .touchUpInside)
+        button.addSubview(labelMessage)
+        return button
     }()
         
     @objc func rightButtonTouched() {
           print("Right button touched")
         }
 
-    
     // MARK: - Configure
     func configure(_ file: ChatTableViewModel) {
-        labelImage.image = file.labelImage
+        imageViewLabel.image = file.labelImage
         labelNameChat.text = file.labelNameChat
         labelNameUser.text = file.labelNameUser
         labelText.text = file.labelText
@@ -101,23 +99,23 @@ final class ChatTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        contentView.backgroundColor = .white
-        contentView.addSubview(labelImage)
+        contentView.backgroundColor = .systemBackground
+        contentView.addSubview(imageViewLabel)
         contentView.addSubview(labelNameChat)
         contentView.addSubview(labelNameUser)
         contentView.addSubview(labelText)
         contentView.addSubview(labelTime)
         contentView.addSubview(buttonMessage)
         
-        labelImage.translatesAutoresizingMaskIntoConstraints = false
-        labelImage.widthAnchor.constraint(equalToConstant: 50).isActive = true
-        labelImage.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        labelImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,constant: 5).isActive = true
-        labelImage.topAnchor.constraint(equalTo: contentView.topAnchor,constant: 5).isActive = true
-        labelImage.bottomAnchor.constraint(equalTo: contentView.bottomAnchor,constant: -5).isActive = true
+        imageViewLabel.translatesAutoresizingMaskIntoConstraints = false
+        imageViewLabel.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        imageViewLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        imageViewLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,constant: 5).isActive = true
+        imageViewLabel.topAnchor.constraint(equalTo: contentView.topAnchor,constant: 5).isActive = true
+        imageViewLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor,constant: -5).isActive = true
 
         labelNameChat.translatesAutoresizingMaskIntoConstraints = false
-        labelNameChat.leadingAnchor.constraint(equalTo: labelImage.trailingAnchor, constant: 5).isActive = true
+        labelNameChat.leadingAnchor.constraint(equalTo: imageViewLabel.trailingAnchor, constant: 5).isActive = true
         labelNameChat.trailingAnchor.constraint(equalTo: buttonMessage.leadingAnchor, constant: -5).isActive = true
         labelNameChat.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 3).isActive = true
 
@@ -142,7 +140,6 @@ final class ChatTableViewCell: UITableViewCell {
         buttonMessage.heightAnchor.constraint(equalToConstant: 25).isActive = true
         buttonMessage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,constant: -10).isActive = true
         buttonMessage.bottomAnchor.constraint(equalTo: contentView.bottomAnchor,constant: -5).isActive = true
-
     }
 
     required init?(coder: NSCoder) {

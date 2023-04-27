@@ -8,7 +8,6 @@
 import UIKit
 
 extension String {
- 
     func getZodiacSign () -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd MMM. yyyy г."
