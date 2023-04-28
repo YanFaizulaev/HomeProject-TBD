@@ -48,7 +48,7 @@ class APIProfile: NetworkServices {
     }
     
     func fetchProfileUser(completion: @escaping (Result<ProfileModel, APIError>) -> Void) {
-        let components = URLComponents(string: "https://plannerok.ru/openapi.json/api/v1/users/me/")
+        let components = URLComponents(string: "https://plannerok.ru/api/v1/users/me/")
         let url = components?.url
         var request = URLRequest(url: url!)
         request.httpMethod = "GET"
@@ -58,7 +58,7 @@ class APIProfile: NetworkServices {
     }
     
     func fetchEditProfileUser(name: String, username: String, birthday: String, city: String, vk: String, instagram: String, status: String, filename: String, base_64: String, completion: @escaping (Result<ProfileEditModel, APIError>) -> Void) {
-        var components = URLComponents(string: "https://plannerok.ru/openapi.json/api/v1/users/me/")
+        var components = URLComponents(string: "https://plannerok.ru/api/v1/users/me/")
         components?.queryItems = [
             URLQueryItem(name: "name", value: "\(name)"),
             URLQueryItem(name: "username", value: "\(username)"),

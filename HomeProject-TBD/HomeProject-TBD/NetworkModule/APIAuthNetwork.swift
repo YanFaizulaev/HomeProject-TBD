@@ -40,7 +40,7 @@ class APIAuthNetwork: NetworkServices {
     }
     
     func fetchAuthUserPhone(phone: String, completion: @escaping (Result<AuthCodeModel, APIError>) -> Void) {
-        var components = URLComponents(string: "https://plannerok.ru/openapi.json/api/v1/users/send-auth-code/")
+        var components = URLComponents(string: "https://plannerok.ru/api/v1/users/send-auth-code/")
         components?.queryItems = [
             URLQueryItem(name: "phone", value: "\(phone)")
         ]
@@ -53,7 +53,7 @@ class APIAuthNetwork: NetworkServices {
     }
     
     func fetchAuthCheckUser(phone: String, code: String, completion: @escaping (Result<AuthCheckModel, APIError>) -> Void) {
-        var components = URLComponents(string: "https://plannerok.ru/openapi.json/api/v1/users/send-auth-code/")
+        var components = URLComponents(string: "https://plannerok.ru/api/v1/users/check-auth-code/")
         let url = components?.url
         components?.queryItems = [
             URLQueryItem(name: "phone", value: "\(phone)"),
