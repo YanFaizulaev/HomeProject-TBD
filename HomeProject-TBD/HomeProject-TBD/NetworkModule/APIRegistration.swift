@@ -22,7 +22,7 @@ class APIRegistration: NetworkServices {
     }
     
     func fetchRegistrationUser(accessToken: String, phone: String, name: String, username: String, completion: @escaping (Result<RegistrationModel, APIError>) -> Void) {
-        var components = URLComponents(string: "/api/v1/users/register/")
+        var components = URLComponents(string: "https://plannerok.ru/openapi.json/api/v1/users/register/")
         components?.queryItems = [
             URLQueryItem(name: "phone", value: "\(phone)"),
             URLQueryItem(name: "name", value: "\(name)"),
@@ -38,7 +38,7 @@ class APIRegistration: NetworkServices {
     }
     
     func fetchRefreshToken(refreshToken: String, completion: @escaping (Result<RegistrationModel, APIError>) -> Void) {
-        var components = URLComponents(string: "/api/v1/users/refresh-token/")
+        var components = URLComponents(string: "https://plannerok.ru/openapi.json/api/v1/users/refresh-token/")
         components?.queryItems = [
             URLQueryItem(name: "refresh_token", value: "\(refreshToken)"),
         ]

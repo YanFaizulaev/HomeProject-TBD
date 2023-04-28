@@ -59,7 +59,7 @@ final class TextFieldPhone: TextFieldCustom, UITextFieldDelegate {
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let allowedCharacters = CharacterSet.decimalDigits
+        let allowedCharacters = CharacterSet(charactersIn: "0123456789+")
         let characterSet = CharacterSet(charactersIn: string)
         let length = (textField.text?.count ?? 0) + string.count - range.length
         return allowedCharacters.isSuperset(of: characterSet) && length <= 11
